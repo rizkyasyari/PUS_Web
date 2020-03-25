@@ -87,7 +87,7 @@
     <!-- CSRF Token -->
     <meta name="_token" content="P8Y7YrIUH6LSkPBag5pjb6bCyyqhdrNqDsAQHdMW">
 
-    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
 
     <!-- plugin css -->
     <link media="all" type="text/css" rel="stylesheet" href="fonts/feather-font/css/iconfont.css">

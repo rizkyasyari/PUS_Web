@@ -20,3 +20,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/data_siswa', 'DataSiswaController@index')->name('data_siswa');
+Route::get('/data_kelas', 'DataKelasController@index')->name('data_kelas');
