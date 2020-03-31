@@ -79,7 +79,7 @@
 <!-- Mirrored from www.nobleui.com/laravel/template/light/auth/login by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Mar 2020 13:36:05 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-    <title>NobleUI Laravel Admin Dashboard Template</title>
+    <title>Login PUS App</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -121,8 +121,8 @@
                             </div>
                             <div class="col-md-8 pl-md-0">
                                 <div class="auth-form-wrapper px-4 py-5">
-                                    <a href="#" class="noble-ui-logo d-block mb-2">Noble<span>UI</span></a>
-                                    <h5 class="text-muted font-weight-normal mb-4">Welcome back! Log in to your account.</h5>
+                                    <a href="#" class="noble-ui-logo d-block mb-2">PUS<span>App</span></a>
+                                    <h5 class="text-muted font-weight-normal mb-4">Selamat Datang! Silahkan Masuk.</h5>
 
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf
@@ -155,7 +155,7 @@
 
                                             @if (Route::has('password.request'))
                                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                    {{ __('Forgot Your Password?') }}
+                                                    {{ __('Lupa Pasword?') }}
                                                 </a>
                                             @endif
 {{--                                            <button type="button" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">--}}
@@ -163,7 +163,7 @@
 {{--                                                Login with twitter--}}
 {{--                                            </button>--}}
                                         </div>
-                                        <a href="register" class="d-block mt-3 text-muted">Not a user? Sign up</a>
+                                        <a href="register" class="d-block mt-3 text-muted">Belum daftar? Sign up</a>
                                     </form>
                                 </div>
                             </div>

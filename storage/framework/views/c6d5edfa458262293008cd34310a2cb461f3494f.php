@@ -20,6 +20,7 @@
     <!-- end plugin css -->
 
     <link media="all" type="text/css" rel="stylesheet" href="plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="plugins/select2/select2.min.css">
 
     <!-- common css -->
     <link media="all" type="text/css" rel="stylesheet" href="css/app.css">
@@ -46,7 +47,7 @@
     <nav class="sidebar">
         <div class="sidebar-header">
             <a href="#" class="sidebar-brand">
-                Noble<span>UI</span>
+                PUS<span>App</span>
             </a>
             <div class="sidebar-toggler not-active">
                 <span></span>
@@ -61,6 +62,12 @@
                     <a href="home" class="nav-link">
                         <i class="link-icon" data-feather="box"></i>
                         <span class="link-title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="saldo" class="nav-link">
+                        <i class="link-icon" data-feather="dollar-sign"></i>
+                        <span class="link-title">Saldo</span>
                     </a>
                 </li>
                 <li class="nav-item nav-category">Siswa</li>
@@ -99,211 +106,63 @@
                 </li>
                 <li class="nav-item nav-category">Data Pembayaran</li>
                 <li class="nav-item ">
-                    <a href="apps/pembayaran_rutin.html" class="nav-link">
+                    <a href="#pembayaran_rutin" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="pembayaran_rutin">
                         <i class="link-icon" data-feather="repeat"></i>
                         <span class="link-title">Pembayaran Rutin</span>
+                        <i class="link-arrow" data-feather="chevron-down"></i>
                     </a>
+                    <div class="collapse " id="pembayaran_rutin">
+                        <ul class="nav sub-menu">
+                            <li class="nav-item">
+                                <a href="pembayaran_rutin" class="nav-link ">Data Pembayaran</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pembayaran_siswa_rutin" class="nav-link ">Pembayaran Siswa</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav-item ">
-                    <a href="apps/sekali_bayar.html" class="nav-link">
+                    <a href="#sekali_bayar" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sekali_bayar">
                         <i class="link-icon" data-feather="credit-card"></i>
                         <span class="link-title">Sekali Bayar</span>
+                        <i class="link-arrow" data-feather="chevron-down"></i>
                     </a>
+                    <div class="collapse " id="sekali_bayar">
+                        <ul class="nav sub-menu">
+                            <li class="nav-item">
+                                <a href="pembayaran_sekali" class="nav-link ">Data Pembayaran</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pembayaran_siswa_sekali" class="nav-link ">Pembayaran Siswa</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 <li class="nav-item nav-category">Laporan</li>
+
                 <li class="nav-item ">
-                    <a href="apps/laporan_harian.html" class="nav-link">
-                        <i class="link-icon" data-feather="file-text"></i>
-                        <span class="link-title">Laporan Harian</span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a href="apps/laporan_bulanan.html" class="nav-link">
+                    <a href="#laporan" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="laporan">
                         <i class="link-icon" data-feather="file-text"></i>
                         <span class="link-title">Laporan Bulanan</span>
+                        <i class="link-arrow" data-feather="chevron-down"></i>
+                    </a>
+                    <div class="collapse " id="laporan">
+                        <ul class="nav sub-menu">
+                            <li class="nav-item">
+                                <a href="laporan" class="nav-link ">Laporan Tagihan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="laporan_pemasukan" class="nav-link ">Laporan Pemasukan</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item ">
+                    <a href="laporan_rekap" class="nav-link">
+                        <i class="link-icon" data-feather="file-text"></i>
+                        <span class="link-title">Rekap Laporan</span>
                     </a>
                 </li>
 
@@ -378,11 +237,17 @@
 
                 <li class="nav-item nav-category">Ekstra</li>
                 <li class="nav-item ">
-                    <a href="apps/chat.html" class="nav-link">
+                    <a href="chat" class="nav-link">
                         <i class="link-icon" data-feather="message-square"></i>
                         <span class="link-title">Chat</span>
                     </a>
                 </li>
+
+
+
+
+
+
             </ul>
         </div>
     </nav>
@@ -1075,7 +940,7 @@
 
 
         <footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between">
-            <p class="text-muted text-center text-md-left">Copyright © 2019 <a href="https://www.nobleui.com/" target="_blank">NobleUI</a>. All rights reserved</p>
+            <p class="text-muted text-center text-md-left">Copyright © 2020 <a href="https://www.nobleui.com/" target="_blank">PUSApp</a>. All rights reserved</p>
             <p class="text-muted text-center text-md-left mb-0 d-none d-md-block">Handcrafted With <i class="mb-1 text-primary ml-1 icon-small" data-feather="heart"></i></p>
         </footer>
     </div>
@@ -1096,6 +961,7 @@
 <script src="plugins/progressbar-js/progressbar.min.js"></script>
 <script src="plugins/datatables-net/jquery.dataTables.js"></script>
 <script src="plugins/datatables-net-bs4/dataTables.bootstrap4.js"></script>
+<script src="plugins/select2/select2.min.js"></script>
 <!-- end plugin js -->
 
 <!-- common js -->
@@ -1104,6 +970,7 @@
 
 <script src="js/dashboard.js"></script>
 <script src="js/datepicker.js"></script>
+<script src="js/select2.js"></script>
 
 </body>
 

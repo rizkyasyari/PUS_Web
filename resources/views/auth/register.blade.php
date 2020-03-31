@@ -122,8 +122,8 @@
                             </div>
                             <div class="col-md-8 pl-md-0">
                                 <div class="auth-form-wrapper px-4 py-5">
-                                    <a href="#" class="noble-ui-logo d-block mb-2">Noble<span>UI</span></a>
-                                    <h5 class="text-muted font-weight-normal mb-4">Create a free account.</h5>
+                                    <a href="#" class="noble-ui-logo d-block mb-2">PUS<span>App</span></a>
+                                    <h5 class="text-muted font-weight-normal mb-4">Buat akun sekolah.</h5>
 
                                     <form class="forms-sample"method="POST" action="{{ route('register') }}">
                                         @csrf
@@ -180,7 +180,7 @@
 {{--                                                Sign up with twitter--}}
 {{--                                            </button>--}}
                                         </div>
-                                        <a href="login" class="d-block mt-3 text-muted">Already a user? Sign in</a>
+                                        <a href="login" class="d-block mt-3 text-muted">Sudah mendaftarphp? Sign in</a>
                                     </form>
                                 </div>
                             </div>

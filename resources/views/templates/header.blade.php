@@ -20,6 +20,7 @@
     <!-- end plugin css -->
 
     <link media="all" type="text/css" rel="stylesheet" href="plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="plugins/select2/select2.min.css">
 
     <!-- common css -->
     <link media="all" type="text/css" rel="stylesheet" href="css/app.css">
@@ -46,7 +47,7 @@
     <nav class="sidebar">
         <div class="sidebar-header">
             <a href="#" class="sidebar-brand">
-                Noble<span>UI</span>
+                PUS<span>App</span>
             </a>
             <div class="sidebar-toggler not-active">
                 <span></span>
@@ -61,6 +62,12 @@
                     <a href="home" class="nav-link">
                         <i class="link-icon" data-feather="box"></i>
                         <span class="link-title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="saldo" class="nav-link">
+                        <i class="link-icon" data-feather="dollar-sign"></i>
+                        <span class="link-title">Saldo</span>
                     </a>
                 </li>
                 <li class="nav-item nav-category">Siswa</li>
@@ -99,211 +106,63 @@
                 </li>
                 <li class="nav-item nav-category">Data Pembayaran</li>
                 <li class="nav-item ">
-                    <a href="apps/pembayaran_rutin.html" class="nav-link">
+                    <a href="#pembayaran_rutin" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="pembayaran_rutin">
                         <i class="link-icon" data-feather="repeat"></i>
                         <span class="link-title">Pembayaran Rutin</span>
+                        <i class="link-arrow" data-feather="chevron-down"></i>
                     </a>
+                    <div class="collapse " id="pembayaran_rutin">
+                        <ul class="nav sub-menu">
+                            <li class="nav-item">
+                                <a href="pembayaran_rutin" class="nav-link ">Data Pembayaran</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pembayaran_siswa_rutin" class="nav-link ">Pembayaran Siswa</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav-item ">
-                    <a href="apps/sekali_bayar.html" class="nav-link">
+                    <a href="#sekali_bayar" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sekali_bayar">
                         <i class="link-icon" data-feather="credit-card"></i>
                         <span class="link-title">Sekali Bayar</span>
+                        <i class="link-arrow" data-feather="chevron-down"></i>
                     </a>
+                    <div class="collapse " id="sekali_bayar">
+                        <ul class="nav sub-menu">
+                            <li class="nav-item">
+                                <a href="pembayaran_sekali" class="nav-link ">Data Pembayaran</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pembayaran_siswa_sekali" class="nav-link ">Pembayaran Siswa</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-{{--                <li class="nav-item ">--}}
-{{--                    <a class="nav-link" data-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false" aria-controls="uiComponents">--}}
-{{--                        <i class="link-icon" data-feather="feather"></i>--}}
-{{--                        <span class="link-title">UI Kit</span>--}}
-{{--                        <i class="link-arrow" data-feather="chevron-down"></i>--}}
-{{--                    </a>--}}
-{{--                    <div class="collapse " id="uiComponents">--}}
-{{--                        <ul class="nav sub-menu">--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/alerts.html" class="nav-link ">Alerts</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/badges.html" class="nav-link ">Badges</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/breadcrumbs.html" class="nav-link ">Breadcrumbs</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/buttons.html" class="nav-link ">Buttons</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/button-group.html" class="nav-link ">Button group</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/cards.html" class="nav-link ">Cards</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/collapse.html" class="nav-link ">Collapse</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/dropdowns.html" class="nav-link ">Dropdowns</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/list-group.html" class="nav-link ">List group</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/media-object.html" class="nav-link ">Media object</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/modal.html" class="nav-link ">Modal</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/navs.html" class="nav-link ">Navs</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/navbar.html" class="nav-link ">Navbar</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/pagination.html" class="nav-link ">Pagination</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/popovers.html" class="nav-link ">Popvers</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/progress.html" class="nav-link ">Progress</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/scrollbar.html" class="nav-link ">Scrollbar</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/scrollspy.html" class="nav-link ">Scrollspy</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/spinners.html" class="nav-link ">Spinners</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/tabs.html" class="nav-link ">Tabs</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="ui-components/tooltips.html" class="nav-link ">Tooltips</a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item ">--}}
-{{--                    <a class="nav-link" data-toggle="collapse" href="#advanced-ui" role="button" aria-expanded="false" aria-controls="advanced-ui">--}}
-{{--                        <i class="link-icon" data-feather="anchor"></i>--}}
-{{--                        <span class="link-title">Advanced UI</span>--}}
-{{--                        <i class="link-arrow" data-feather="chevron-down"></i>--}}
-{{--                    </a>--}}
-{{--                    <div class="collapse " id="advanced-ui">--}}
-{{--                        <ul class="nav sub-menu">--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="advanced-ui/cropper.html" class="nav-link ">Cropper</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="advanced-ui/owl-carousel.html" class="nav-link ">Owl Carousel</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="advanced-ui/sweet-alert.html" class="nav-link ">Sweet Alert</a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item ">--}}
-{{--                    <a class="nav-link" data-toggle="collapse" href="#forms" role="button" aria-expanded="false" aria-controls="forms">--}}
-{{--                        <i class="link-icon" data-feather="inbox"></i>--}}
-{{--                        <span class="link-title">Forms</span>--}}
-{{--                        <i class="link-arrow" data-feather="chevron-down"></i>--}}
-{{--                    </a>--}}
-{{--                    <div class="collapse " id="forms">--}}
-{{--                        <ul class="nav sub-menu">--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="forms/basic-elements.html" class="nav-link ">Basic Elements</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="forms/advanced-elements.html" class="nav-link ">Advanced Elements</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="forms/editors.html" class="nav-link ">Editors</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="forms/wizard.html" class="nav-link ">Wizard</a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item ">--}}
-{{--                    <a class="nav-link" data-toggle="collapse" href="#charts" role="button" aria-expanded="false" aria-controls="charts">--}}
-{{--                        <i class="link-icon" data-feather="pie-chart"></i>--}}
-{{--                        <span class="link-title">Charts</span>--}}
-{{--                        <i class="link-arrow" data-feather="chevron-down"></i>--}}
-{{--                    </a>--}}
-{{--                    <div class="collapse " id="charts">--}}
-{{--                        <ul class="nav sub-menu">--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="charts/apex.html" class="nav-link ">Apex</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="charts/chartjs.html" class="nav-link ">ChartJs</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="charts/flot.html" class="nav-link ">Flot</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="charts/morrisjs.html" class="nav-link ">MorrisJs</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="charts/peity.html" class="nav-link ">Peity</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="charts/sparkline.html" class="nav-link ">Sparkline</a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item ">--}}
-{{--                    <a class="nav-link" data-toggle="collapse" href="#tables" role="button" aria-expanded="false" aria-controls="tables">--}}
-{{--                        <i class="link-icon" data-feather="layout"></i>--}}
-{{--                        <span class="link-title">Tables</span>--}}
-{{--                        <i class="link-arrow" data-feather="chevron-down"></i>--}}
-{{--                    </a>--}}
-{{--                    <div class="collapse " id="tables">--}}
-{{--                        <ul class="nav sub-menu">--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="tables/basic-tables.html" class="nav-link ">Basic Tables</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="tables/data-table.html" class="nav-link ">Data Table</a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item ">--}}
-{{--                    <a class="nav-link" data-toggle="collapse" href="#icons" role="button" aria-expanded="false" aria-controls="icons">--}}
-{{--                        <i class="link-icon" data-feather="smile"></i>--}}
-{{--                        <span class="link-title">Icons</span>--}}
-{{--                        <i class="link-arrow" data-feather="chevron-down"></i>--}}
-{{--                    </a>--}}
-{{--                    <div class="collapse " id="icons">--}}
-{{--                        <ul class="nav sub-menu">--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="icons/feather-icons.html" class="nav-link ">Feather Icons</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="icons/flag-icons.html" class="nav-link ">Flag Icons</a>--}}
-{{--                            </li>--}}
-{{--                            <li class="nav-item">--}}
-{{--                                <a href="icons/mdi-icons.html" class="nav-link ">Mdi Icons</a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
+
                 <li class="nav-item nav-category">Laporan</li>
+
                 <li class="nav-item ">
-                    <a href="apps/laporan_harian.html" class="nav-link">
-                        <i class="link-icon" data-feather="file-text"></i>
-                        <span class="link-title">Laporan Harian</span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a href="apps/laporan_bulanan.html" class="nav-link">
+                    <a href="#laporan" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="laporan">
                         <i class="link-icon" data-feather="file-text"></i>
                         <span class="link-title">Laporan Bulanan</span>
+                        <i class="link-arrow" data-feather="chevron-down"></i>
+                    </a>
+                    <div class="collapse " id="laporan">
+                        <ul class="nav sub-menu">
+                            <li class="nav-item">
+                                <a href="laporan" class="nav-link ">Laporan Tagihan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="laporan_pemasukan" class="nav-link ">Laporan Pemasukan</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item ">
+                    <a href="laporan_rekap" class="nav-link">
+                        <i class="link-icon" data-feather="file-text"></i>
+                        <span class="link-title">Rekap Laporan</span>
                     </a>
                 </li>
 {{--                <li class="nav-item ">--}}
@@ -378,11 +237,17 @@
 {{--                </li>--}}
                 <li class="nav-item nav-category">Ekstra</li>
                 <li class="nav-item ">
-                    <a href="apps/chat.html" class="nav-link">
+                    <a href="chat" class="nav-link">
                         <i class="link-icon" data-feather="message-square"></i>
                         <span class="link-title">Chat</span>
                     </a>
                 </li>
+{{--                <li class="nav-item ">--}}
+{{--                    <a href="tambah_akun" class="nav-link">--}}
+{{--                        <i class="link-icon" data-feather="user-plus"></i>--}}
+{{--                        <span class="link-title">Tambah Akun</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
             </ul>
         </div>
     </nav>
@@ -1075,7 +940,7 @@
 {{--            </div> <!-- row -->--}}
 {{--        </div>--}}
         <footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between">
-            <p class="text-muted text-center text-md-left">Copyright © 2019 <a href="https://www.nobleui.com/" target="_blank">NobleUI</a>. All rights reserved</p>
+            <p class="text-muted text-center text-md-left">Copyright © 2020 <a href="https://www.nobleui.com/" target="_blank">PUSApp</a>. All rights reserved</p>
             <p class="text-muted text-center text-md-left mb-0 d-none d-md-block">Handcrafted With <i class="mb-1 text-primary ml-1 icon-small" data-feather="heart"></i></p>
         </footer>
     </div>
@@ -1096,6 +961,7 @@
 <script src="plugins/progressbar-js/progressbar.min.js"></script>
 <script src="plugins/datatables-net/jquery.dataTables.js"></script>
 <script src="plugins/datatables-net-bs4/dataTables.bootstrap4.js"></script>
+<script src="plugins/select2/select2.min.js"></script>
 <!-- end plugin js -->
 
 <!-- common js -->
@@ -1104,6 +970,7 @@
 
 <script src="js/dashboard.js"></script>
 <script src="js/datepicker.js"></script>
+<script src="js/select2.js"></script>
 {{--<script src="js/data-table.js"></script>--}}
 </body>
 

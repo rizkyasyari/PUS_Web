@@ -11,14 +11,7 @@
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <button type="button" class="btn btn-danger btn-icon-text float-right">
-                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
-                            Hapus Data
-                        </button>
-                        <button type="button" class="btn btn-success btn-icon-text float-right" style="margin-right: 5px">
-                            <i class="btn-icon-prepend" data-feather="edit"></i>
-                            Edit Data
-                        </button>
+
                         <button type="button" class="btn btn-primary btn-icon-text float-right" style="margin-right: 5px">
                             <i class="btn-icon-prepend" data-feather="plus-circle"></i>
                             Tambah Data
@@ -32,44 +25,135 @@
                                 <tr>
                                     <th>Kelas</th>
                                     <th>Rombel</th>
+                                    <th>Aksi</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
                                     <td>7</td>
                                     <td>7.1</td>
+                                    <td style="width: fit-content">
+                                        <button type="button" class="btn btn-success btn-icon-text" >
+                                            <i class="btn-icon-prepend" data-feather="edit"></i>
+                                            Edit Data
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-icon-text">
+                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
+                                            Hapus Data
+                                        </button>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    <td>7</td>
                                     <td>7.2</td>
+                                    <td style="width: fit-content">
+                                        <button type="button" class="btn btn-success btn-icon-text" >
+                                            <i class="btn-icon-prepend" data-feather="edit"></i>
+                                            Edit Data
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-icon-text">
+                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
+                                            Hapus Data
+                                        </button>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    <td>7</td>
                                     <td>7.3</td>
+                                    <td style="width: fit-content">
+                                        <button type="button" class="btn btn-success btn-icon-text" >
+                                            <i class="btn-icon-prepend" data-feather="edit"></i>
+                                            Edit Data
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-icon-text">
+                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
+                                            Hapus Data
+                                        </button>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>8</td>
                                     <td>8.1</td>
+                                    <td style="width: fit-content">
+                                        <button type="button" class="btn btn-success btn-icon-text" >
+                                            <i class="btn-icon-prepend" data-feather="edit"></i>
+                                            Edit Data
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-icon-text">
+                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
+                                            Hapus Data
+                                        </button>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    <td>8</td>
                                     <td>8.2</td>
+                                    <td style="width: fit-content">
+                                        <button type="button" class="btn btn-success btn-icon-text" >
+                                            <i class="btn-icon-prepend" data-feather="edit"></i>
+                                            Edit Data
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-icon-text">
+                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
+                                            Hapus Data
+                                        </button>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    <td>8</td>
                                     <td>8.3</td>
+                                    <td style="width: fit-content">
+                                        <button type="button" class="btn btn-success btn-icon-text" >
+                                            <i class="btn-icon-prepend" data-feather="edit"></i>
+                                            Edit Data
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-icon-text">
+                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
+                                            Hapus Data
+                                        </button>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>9</td>
                                     <td>9.1</td>
+                                    <td style="width: fit-content">
+                                        <button type="button" class="btn btn-success btn-icon-text" >
+                                            <i class="btn-icon-prepend" data-feather="edit"></i>
+                                            Edit Data
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-icon-text">
+                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
+                                            Hapus Data
+                                        </button>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    <td>9</td>
                                     <td>9.2</td>
+                                    <td style="width: fit-content">
+                                        <button type="button" class="btn btn-success btn-icon-text" >
+                                            <i class="btn-icon-prepend" data-feather="edit"></i>
+                                            Edit Data
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-icon-text">
+                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
+                                            Hapus Data
+                                        </button>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    <td>9</td>
                                     <td>9.3</td>
+                                    <td style="width: fit-content">
+                                        <button type="button" class="btn btn-success btn-icon-text" >
+                                            <i class="btn-icon-prepend" data-feather="edit"></i>
+                                            Edit Data
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-icon-text">
+                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
+                                            Hapus Data
+                                        </button>
+                                    </td>
                                 </tr>
                                 
                                 
