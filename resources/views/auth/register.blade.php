@@ -1,6 +1,6 @@
-@extends('layouts.app')
+{{--@extends('layouts.app')--}}
 
-@section('content')
+{{--@section('content')--}}
 {{--<div class="container">--}}
 {{--    <div class="row justify-content-center">--}}
 {{--        <div class="col-md-8">--}}
@@ -81,7 +81,7 @@
 <!-- Mirrored from www.nobleui.com/laravel/template/light/auth/register by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Mar 2020 13:36:05 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-    <title>NobleUI Laravel Admin Dashboard Template</title>
+    <title>Register Aplikasi Pembayaran Uang Sekolah</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -89,7 +89,7 @@
     <!-- CSRF Token -->
     <meta name="_token" content="P8Y7YrIUH6LSkPBag5pjb6bCyyqhdrNqDsAQHdMW">
 
-    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="icon" type="image/x-icon" href="landingpages_assets/assets/img/navbar-logo.png" />
 
     <!-- plugin css -->
     <link media="all" type="text/css" rel="stylesheet" href="fonts/feather-font/css/iconfont.css">
@@ -128,7 +128,7 @@
                                     <form class="forms-sample"method="POST" action="{{ route('register') }}">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="exampleInputUsername1">{{ __('Name') }}</label>
+                                            <label for="exampleInputUsername1">{{ __('Nama Sekolah') }}</label>
                                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                             @error('name')
@@ -139,10 +139,54 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">{{ __('E-Mail Address') }}</label>
+                                            <label for="exampleInputEmail1">{{ __('E-Mail Sekolah') }}</label>
                                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                             @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputNomorTelepon">{{ __('Nomor Telepon') }}</label>
+                                            <input id="nomor_telepon" type="number" class="form-control @error('nomor_telepon') is-invalid @enderror" name="nomor_telepon" value="{{ old('nomor_telepon') }}" required autocomplete="nomor_telepon">
+
+                                            @error('nomor_telepon')
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputNPSN">{{ __('NPSN') }}</label>
+                                            <input id="npsn" type="number" class="form-control @error('npsn') is-invalid @enderror" name="npsn" value="{{ old('npsn') }}" required autocomplete="npsn">
+
+                                            @error('npsn')
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputAlamat">{{ __('Alamat') }}</label>
+                                            <input id="alamat" type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat" value="{{ old('alamat') }}" required autocomplete="alamat">
+
+                                            @error('alamat')
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputTipeSekolah">{{ __('Tipe Sekolah') }}</label>
+                                            <input id="tipe_sekolah" type="text" class="form-control @error('tipe_sekolah') is-invalid @enderror" name="tipe_sekolah" value="{{ old('tipe_sekolah') }}" required autocomplete="alamat">
+
+                                            @error('tipe_sekolah')
                                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -161,7 +205,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="password-confirm">{{ __('Password') }}</label>
+                                            <label for="password-confirm">{{ __('Konfirmasi Password') }}</label>
                                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                         </div>
 
@@ -180,7 +224,7 @@
 {{--                                                Sign up with twitter--}}
 {{--                                            </button>--}}
                                         </div>
-                                        <a href="login" class="d-block mt-3 text-muted">Sudah mendaftarphp? Sign in</a>
+                                        <a href="login" class="d-block mt-3 text-muted">Sudah mendaftar? Sign in</a>
                                     </form>
                                 </div>
                             </div>
@@ -209,4 +253,4 @@
 
 <!-- Mirrored from www.nobleui.com/laravel/template/light/auth/register by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Mar 2020 13:36:05 GMT -->
 </html>
-@endsection
+{{--@endsection--}}

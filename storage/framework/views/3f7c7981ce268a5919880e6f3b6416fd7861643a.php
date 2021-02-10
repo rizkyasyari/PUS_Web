@@ -126,7 +126,7 @@
                                     <form class="forms-sample"method="POST" action="<?php echo e(route('register')); ?>">
                                         <?php echo csrf_field(); ?>
                                         <div class="form-group">
-                                            <label for="exampleInputUsername1"><?php echo e(__('Name')); ?></label>
+                                            <label for="exampleInputUsername1"><?php echo e(__('Nama Sekolah')); ?></label>
                                             <input id="name" type="text" class="form-control <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -151,7 +151,7 @@ unset($__errorArgs, $__bag); ?>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1"><?php echo e(__('E-Mail Address')); ?></label>
+                                            <label for="exampleInputEmail1"><?php echo e(__('E-Mail Sekolah')); ?></label>
                                             <input id="email" type="email" class="form-control <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -162,6 +162,106 @@ endif;
 unset($__errorArgs, $__bag); ?>" name="email" value="<?php echo e(old('email')); ?>" required autocomplete="email">
 
                                             <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong><?php echo e($message); ?></strong>
+                                    </span>
+                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputNomorTelepon"><?php echo e(__('Nomor Telepon')); ?></label>
+                                            <input id="nomor_telepon" type="number" class="form-control <?php $__errorArgs = ['nomor_telepon'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" name="nomor_telepon" value="<?php echo e(old('nomor_telepon')); ?>" required autocomplete="nomor_telepon">
+
+                                            <?php $__errorArgs = ['nomor_telepon'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong><?php echo e($message); ?></strong>
+                                    </span>
+                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputNPSN"><?php echo e(__('NPSN')); ?></label>
+                                            <input id="npsn" type="number" class="form-control <?php $__errorArgs = ['npsn'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" name="npsn" value="<?php echo e(old('npsn')); ?>" required autocomplete="npsn">
+
+                                            <?php $__errorArgs = ['npsn'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong><?php echo e($message); ?></strong>
+                                    </span>
+                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputAlamat"><?php echo e(__('Alamat')); ?></label>
+                                            <input id="alamat" type="text" class="form-control <?php $__errorArgs = ['alamat'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" name="alamat" value="<?php echo e(old('alamat')); ?>" required autocomplete="alamat">
+
+                                            <?php $__errorArgs = ['alamat'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong><?php echo e($message); ?></strong>
+                                    </span>
+                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputTipeSekolah"><?php echo e(__('Tipe Sekolah')); ?></label>
+                                            <input id="tipe_sekolah" type="text" class="form-control <?php $__errorArgs = ['tipe_sekolah'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" name="tipe_sekolah" value="<?php echo e(old('tipe_sekolah')); ?>" required autocomplete="alamat">
+
+                                            <?php $__errorArgs = ['tipe_sekolah'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -201,7 +301,7 @@ unset($__errorArgs, $__bag); ?>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="password-confirm"><?php echo e(__('Password')); ?></label>
+                                            <label for="password-confirm"><?php echo e(__('Konfirmasi Password')); ?></label>
                                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                         </div>
 

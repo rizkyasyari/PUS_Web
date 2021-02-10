@@ -26,9 +26,14 @@
     <link media="all" type="text/css" rel="stylesheet" href="css/app.css">
     <!-- end common css -->
 
+    <link media="all" type="text/css" rel="stylesheet" href="plugins/datatables-net/dataTables.bootstrap4.css">
+    <link media="all" type="text/css" rel="stylesheet" href="plugins/datatables-net-bs4/buttons.dataTables.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="plugins/datatables-net-bs4/searchPanes.dataTables.css">
+    <link media="all" type="text/css" rel="stylesheet" href="plugins/datatables-net-bs4/select.dataTables.min.css">
+
 
     <!-- Global site tag (gtag.js) - Google Analytics start -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146586338-1"></script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -91,7 +96,12 @@
 
 
 
-
+                <li class="nav-item ">
+                    <a href="data_jurusan" class="nav-link">
+                        <i class="link-icon" data-feather="briefcase"></i>
+                        <span class="link-title">Data Jurusan</span>
+                    </a>
+                </li>
                 <li class="nav-item ">
                     <a href="data_kelas" class="nav-link">
                         <i class="link-icon" data-feather="home"></i>
@@ -99,6 +109,11 @@
                     </a>
                 </li>
                 <li class="nav-item ">
+                    <a href="data_orangtua" class="nav-link">
+                        <i class="link-icon" data-feather="user"></i>
+                        <span class="link-title">Data Orang Tua</span>
+                    </a>
+                </li><li class="nav-item ">
                     <a href="data_siswa" class="nav-link">
                         <i class="link-icon" data-feather="user"></i>
                         <span class="link-title">Data Siswa</span>
@@ -967,10 +982,132 @@
 <!-- common js -->
 <script src="js/template.js"></script>
 <!-- end common js -->
+<script src="plugins/datatables-net-bs4/dataTables.buttons.min.js"></script>
+<script src="plugins/datatables-net-bs4/dataTables.searchPanes.min.js"></script>
+<script src="plugins/datatables-net-bs4/dataTables.select.min.js"></script>
+
 
 <script src="js/dashboard.js"></script>
 <script src="js/datepicker.js"></script>
 <script src="js/select2.js"></script>
+<script src="js/data-table.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    var root = window.origin + '/spus/public/'
+
+    $('.edit-jurusan').click(function () {
+        var id = $(this).val();
+        var getUrl = root + 'api/jurusan/' + id;
+
+        $.ajax({
+            url : getUrl,
+            type : 'ajax',
+            method : 'get',
+            datatype : 'json',
+            success: function (response){
+                var hasil = JSON.parse(response);
+                console.log(hasil.hasil);
+
+                $('#n-jurusan').val(hasil.hasil.nama_jurusan);
+                $('#id-jurusan').val(hasil.hasil.id_jurusan);
+            },
+            error:function (response){
+                console.log(response.status + 'error');
+            }
+        })
+
+    })
+</script>
+
+<script>
+    var root = window.origin + '/spus/public/'
+
+    $('.edit-kelas').click(function () {
+        var id = $(this).val();
+        var getUrl = root + 'api/kelas/' + id;
+
+        $.ajax({
+            url : getUrl,
+            type : 'ajax',
+            method : 'get',
+            datatype : 'json',
+            success: function (response){
+                var hasil = JSON.parse(response);
+                console.log(hasil.hasil);
+
+                $('#n-kelas').val(hasil.hasil.nama_kelas);
+                $('#id-kelas').val(hasil.hasil.id_kelas);
+            },
+            error:function (response){
+                console.log(response.status + 'error');
+            }
+        })
+
+    })
+</script>
+
+<script type="text/javascript">
+    if (window.location.href === 'http://localhost/spus/public/home'){
+        var str = document.getElementById('typewriter').innerHTML,
+            i = 0,
+            isTag,
+            text;
+
+        (function type() {
+            text = str.slice(0, ++i);
+            if (text === str) return;
+
+            document.getElementById('typewriter').innerHTML = text;
+
+            var char = text.slice(-1);
+            if( char === '<' ) isTag = true;
+            if( char === '>' ) isTag = false;
+
+            if (isTag) return type();
+            setTimeout(type, 110);
+        }());
+
+        (function () {
+            function checkTime(i) {
+                return (i < 10) ? "0" + i : i;
+            }
+
+            function startTime() {
+                var today = new Date(),
+                    // d = checkTime(today.getDay()),
+                    // M = checkTime(today.getMonth()),
+                    // Y = checkTime(today.getFullYear()),
+                    h = checkTime(today.getHours()),
+                    m = checkTime(today.getMinutes()),
+                    s = checkTime(today.getSeconds());
+                document.getElementById('time').innerHTML = h + ":" + m + ":" + s ;
+                t = setTimeout(function () {
+                    startTime()
+                }, 500);
+            }
+            startTime();
+        })();
+    }
+
+
+</script>
+
+
+<script type="text/javascript">
+
+</script>
 
 </body>
 

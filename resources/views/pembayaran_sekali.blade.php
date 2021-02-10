@@ -8,6 +8,11 @@
         {{--                <li class="breadcrumb-item active" aria-current="page">Data Table</li>--}}
         {{--            </ol>--}}
         {{--        </nav>--}}
+        <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
+            <div>
+                <h4 class="mb-3 mb-md-0">Sekali Bayar</h4>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-12 grid-margin stretch-card">

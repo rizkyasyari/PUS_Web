@@ -1,6 +1,6 @@
-@extends('layouts.app')
+{{--@extends('layouts.app')--}}
 
-@section('content')
+{{--@section('content')--}}
 {{--<div class="container">--}}
 {{--    <div class="row justify-content-center">--}}
 {{--        <div class="col-md-8">--}}
@@ -87,7 +87,7 @@
     <!-- CSRF Token -->
     <meta name="_token" content="P8Y7YrIUH6LSkPBag5pjb6bCyyqhdrNqDsAQHdMW">
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="landingpages_assets/assets/img/navbar-logo.png" />
 
     <!-- plugin css -->
     <link media="all" type="text/css" rel="stylesheet" href="fonts/feather-font/css/iconfont.css">
@@ -192,4 +192,4 @@
 
 <!-- Mirrored from www.nobleui.com/laravel/template/light/auth/login by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Mar 2020 13:36:05 GMT -->
 </html>
-@endsection
+{{--@endsection--}}

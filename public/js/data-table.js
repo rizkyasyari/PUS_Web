@@ -2,17 +2,33 @@ $(function() {
   'use strict';
 
   $(function() {
-    $('#dataTableExample').DataTable({
+    $('#dataTableKelas').DataTable({
+
+        buttons:[
+            'searchPanes'
+        ],
+        dom: 'Bfrtip',
+        columnDefs:[
+            {
+                searchPanes:{
+                    show: true,
+                },
+                targets: [ 1,],
+            },
+        ],
       "aLengthMenu": [
         [10, 30, 50, -1],
         [10, 30, 50, "All"]
       ],
       "iDisplayLength": 10,
-      "language": {
-        search: ""
-      }
+        language: {
+            searchPanes: {
+                clearMessage: 'Reset Filter',
+                collapse: {0: 'Filter Jurusan', _: 'Search Options (%d)'}
+            }
+        },
     });
-    $('#dataTableExample').each(function() {
+    $('#dataTableKelas').each(function() {
       var datatable = $(this);
       // SEARCH - Add the placeholder for Search and Turn this into in-line form control
       var search_input = datatable.closest('.dataTables_wrapper').find('div[id$=_filter] input');

@@ -26,13 +26,13 @@ $(function() {
       type: 'line',
       data: {
         labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
-        datasets: [{ 
+        datasets: [{
             data: [86,114,106,106,107,111,133,221,783,2478],
             label: "Africa",
             borderColor: "#7ee5e5",
             backgroundColor: "rgba(0,0,0,0)",
             fill: false
-          }, { 
+          }, {
             data: [282,350,411,502,635,809,947,1402,3700,5267],
             label: "Asia",
             borderColor: "#f77eb9",
@@ -65,13 +65,13 @@ $(function() {
       type: 'line',
       data: {
         labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
-        datasets: [{ 
+        datasets: [{
             data: [86,114,106,106,107,111,133,221,783,2478],
             label: "Africa",
             borderColor: "#7ee5e5",
             backgroundColor: "#c2fdfd",
             fill: true
-          }, { 
+          }, {
             data: [282,350,411,502,635,809,947,1402,3700,5267],
             label: "Asia",
             borderColor: "#f77eb9",
@@ -144,13 +144,13 @@ $(function() {
       },
       options: {
         scales: {
-          yAxes: [{ 
+          yAxes: [{
             scaleLabel: {
               display: true,
               labelString: "Happiness"
             }
           }],
-          xAxes: [{ 
+          xAxes: [{
             scaleLabel: {
               display: true,
               labelString: "GDP (PPP)"
@@ -180,7 +180,7 @@ $(function() {
             fill: true,
             backgroundColor: "#c2fdfd",
             borderColor: "#7ee5e5",
-            pointBorderColor: "#7ee5e5",
+            // pointBorderColor: "#7ee5e5",
             pointBackgroundColor: "#c2fdfd",
             pointBorderColor: "#fff",
             data: [25.48,54.16,7.61,8.06,4.45]

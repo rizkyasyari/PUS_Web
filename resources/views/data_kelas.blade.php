@@ -8,315 +8,187 @@
         {{--                <li class="breadcrumb-item active" aria-current="page">Data Table</li>--}}
         {{--            </ol>--}}
         {{--        </nav>--}}
-
+        <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
+            <div>
+                <h4 class="mb-3 mb-md-0">Kelas</h4>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
 
-                        <button type="button" class="btn btn-primary btn-icon-text float-right" style="margin-right: 5px">
+                        <button type="button" class="btn btn-primary btn-icon-text float-right" data-toggle="modal" data-target="#exampleModal" style="margin-right: 5px">
                             <i class="btn-icon-prepend" data-feather="plus-circle"></i>
                             Tambah Data
                         </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Tambah Data Kelas</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form  method="POST" action="data_kelas/tambah">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label>Jurusan</label>
+                                                <p><select class="js-example-basic-single" id="id_jurusan" name="id_jurusan" style="width: 100%">
+                                                        @foreach($jurusan as $j)
+                                                        <option value="{{$j->id_jurusan}}">{{$j->nama_jurusan}}</option>
+                                                        @endforeach</select></p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputKelas">{{ __('Kelas') }}</label>
+                                                <input id="kelas" type="text" class="form-control @error('kelas') is-invalid @enderror" name="kelas" value="{{ old('kelas') }}" required autocomplete="kelas" autofocus>
+
+                                                @error('kelas')
+                                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                                @enderror
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputKelas">{{ __('Wali Kelas') }}</label>
+                                                <input id="wali_kelas" type="text" class="form-control @error('wali_kelas') is-invalid @enderror" name="wali_kelas" value="{{ old('wali_kelas') }}" required autocomplete="wali_kelas" autofocus>
+
+                                                @error('wali_kelas')
+                                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                                @enderror
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputKelas">{{ __('Jumlah Murid') }}</label>
+                                                <input id="jumlah_murid" type="number" class="form-control @error('jumlah_murid') is-invalid @enderror" name="jumlah_murid" value="{{ old('jumlah_murid') }}" required autocomplete="jumlah_murid" autofocus>
+
+                                                @error('jumlah_murid')
+                                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                                @enderror
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">
+                                                    {{ __('Submit') }}
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <h6 class="card-title" style="margin-bottom: 30px">Data Kelas</h6>
 
+{{--                        <div class="form-group">--}}
+{{--                            <label class="mt-1">Pilih Jurusan</label>--}}
+{{--                            <select class="js-example-basic-single w-20">--}}
+{{--                                @foreach($jurusan as $j)--}}
+{{--                                <option value="{{$j->id_jurusan}}">{{$j->nama_jurusan}}</option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                            <a class="btn btn-primary" href="#" role="button">Lihat</a>--}}
+{{--                        </div>--}}
 
-                        <div class="table-bordered" >
-                            <table id="dataTableExample" class="table">
+
+
+                        <div>
+                            <div class="table-responsive">
+                            <table id="dataTableKelas" class="table display nowrap" style="height: 500px">
                                 <thead>
                                 <tr>
+                                    <th>No</th>
+                                    <th>Jurusan</th>
                                     <th>Kelas</th>
-                                    <th>Rombel</th>
+                                    <th>Wali Kelas</th>
+                                    <th>Jumlah Murid</th>
                                     <th>Aksi</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                $no = 1;
+                                foreach ($kelas as $k):
+                                ?>
                                 <tr>
-                                    <td>7</td>
-                                    <td>7.1</td>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= $k->nama_jurusan?></td>
+                                    <td><?= $k->nama_kelas?></td>
+                                    <td><?= $k->wali_kelas?></td>
+                                    <td><?= $k->jumlah_murid?></td>
                                     <td style="width: fit-content">
-                                        <button type="button" class="btn btn-success btn-icon-text" >
-                                            <i class="btn-icon-prepend" data-feather="edit"></i>
-                                            Edit Data
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-icon-text">
+{{--                                        <button value="{{ $k->id_kelas }}" type="button" class="btn edit-jurusan btn-success btn-icon-text" data-toggle="modal" data-target="#ModalKelas">--}}
+{{--                                            <i class="btn-icon-prepend" data-feather="edit"></i>--}}
+{{--                                            Edit Data--}}
+{{--                                        </button>--}}
+
+                                        <a href="{{url('/data_kelas/edit/'. $k->id_kelas )}}"  class="btn ripple btn-success btn-with-icon btn-sm "><i class="fe fe-edit"></i> EDIT</a>
+
+                                        <a onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="{{url('/data_kelas/hapus/'. $k->id_kelas )}}" type="button" class="btn btn-danger btn-icon-text">
                                             <i class="btn-icon-prepend" data-feather="trash-2"></i>
                                             Hapus Data
-                                        </button>
+                                        </a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>7.2</td>
-                                    <td style="width: fit-content">
-                                        <button type="button" class="btn btn-success btn-icon-text" >
-                                            <i class="btn-icon-prepend" data-feather="edit"></i>
-                                            Edit Data
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-icon-text">
-                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
-                                            Hapus Data
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>7.3</td>
-                                    <td style="width: fit-content">
-                                        <button type="button" class="btn btn-success btn-icon-text" >
-                                            <i class="btn-icon-prepend" data-feather="edit"></i>
-                                            Edit Data
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-icon-text">
-                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
-                                            Hapus Data
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>8.1</td>
-                                    <td style="width: fit-content">
-                                        <button type="button" class="btn btn-success btn-icon-text" >
-                                            <i class="btn-icon-prepend" data-feather="edit"></i>
-                                            Edit Data
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-icon-text">
-                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
-                                            Hapus Data
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>8.2</td>
-                                    <td style="width: fit-content">
-                                        <button type="button" class="btn btn-success btn-icon-text" >
-                                            <i class="btn-icon-prepend" data-feather="edit"></i>
-                                            Edit Data
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-icon-text">
-                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
-                                            Hapus Data
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>8.3</td>
-                                    <td style="width: fit-content">
-                                        <button type="button" class="btn btn-success btn-icon-text" >
-                                            <i class="btn-icon-prepend" data-feather="edit"></i>
-                                            Edit Data
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-icon-text">
-                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
-                                            Hapus Data
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>9.1</td>
-                                    <td style="width: fit-content">
-                                        <button type="button" class="btn btn-success btn-icon-text" >
-                                            <i class="btn-icon-prepend" data-feather="edit"></i>
-                                            Edit Data
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-icon-text">
-                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
-                                            Hapus Data
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>9.2</td>
-                                    <td style="width: fit-content">
-                                        <button type="button" class="btn btn-success btn-icon-text" >
-                                            <i class="btn-icon-prepend" data-feather="edit"></i>
-                                            Edit Data
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-icon-text">
-                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
-                                            Hapus Data
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>9.3</td>
-                                    <td style="width: fit-content">
-                                        <button type="button" class="btn btn-success btn-icon-text" >
-                                            <i class="btn-icon-prepend" data-feather="edit"></i>
-                                            Edit Data
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-icon-text">
-                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
-                                            Hapus Data
-                                        </button>
-                                    </td>
-                                </tr>
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Cedric Kelly</td>--}}
-                                {{--                                    <td>Senior Javascript Developer</td>--}}
-                                {{--                                    <td>Edinburgh</td>--}}
-                                {{--                                    <td>22</td>--}}
-                                {{--                                    <td>2012/03/29</td>--}}
-                                {{--                                    <td>$433,060</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Airi Satou</td>--}}
-                                {{--                                    <td>Accountant</td>--}}
-                                {{--                                    <td>Tokyo</td>--}}
-                                {{--                                    <td>33</td>--}}
-                                {{--                                    <td>2008/11/28</td>--}}
-                                {{--                                    <td>$162,700</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Brielle Williamson</td>--}}
-                                {{--                                    <td>Integration Specialist</td>--}}
-                                {{--                                    <td>New York</td>--}}
-                                {{--                                    <td>61</td>--}}
-                                {{--                                    <td>2012/12/02</td>--}}
-                                {{--                                    <td>$372,000</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Herrod Chandler</td>--}}
-                                {{--                                    <td>Sales Assistant</td>--}}
-                                {{--                                    <td>San Francisco</td>--}}
-                                {{--                                    <td>59</td>--}}
-                                {{--                                    <td>2012/08/06</td>--}}
-                                {{--                                    <td>$137,500</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Rhona Davidson</td>--}}
-                                {{--                                    <td>Integration Specialist</td>--}}
-                                {{--                                    <td>Tokyo</td>--}}
-                                {{--                                    <td>55</td>--}}
-                                {{--                                    <td>2010/10/14</td>--}}
-                                {{--                                    <td>$327,900</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Colleen Hurst</td>--}}
-                                {{--                                    <td>Javascript Developer</td>--}}
-                                {{--                                    <td>San Francisco</td>--}}
-                                {{--                                    <td>39</td>--}}
-                                {{--                                    <td>2009/09/15</td>--}}
-                                {{--                                    <td>$205,500</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Sonya Frost</td>--}}
-                                {{--                                    <td>Software Engineer</td>--}}
-                                {{--                                    <td>Edinburgh</td>--}}
-                                {{--                                    <td>23</td>--}}
-                                {{--                                    <td>2008/12/13</td>--}}
-                                {{--                                    <td>$103,600</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Jena Gaines</td>--}}
-                                {{--                                    <td>Office Manager</td>--}}
-                                {{--                                    <td>London</td>--}}
-                                {{--                                    <td>30</td>--}}
-                                {{--                                    <td>2008/12/19</td>--}}
-                                {{--                                    <td>$90,560</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Quinn Flynn</td>--}}
-                                {{--                                    <td>Support Lead</td>--}}
-                                {{--                                    <td>Edinburgh</td>--}}
-                                {{--                                    <td>22</td>--}}
-                                {{--                                    <td>2013/03/03</td>--}}
-                                {{--                                    <td>$342,000</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Charde Marshall</td>--}}
-                                {{--                                    <td>Regional Director</td>--}}
-                                {{--                                    <td>San Francisco</td>--}}
-                                {{--                                    <td>36</td>--}}
-                                {{--                                    <td>2008/10/16</td>--}}
-                                {{--                                    <td>$470,600</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Haley Kennedy</td>--}}
-                                {{--                                    <td>Senior Marketing Designer</td>--}}
-                                {{--                                    <td>London</td>--}}
-                                {{--                                    <td>43</td>--}}
-                                {{--                                    <td>2012/12/18</td>--}}
-                                {{--                                    <td>$313,500</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Tatyana Fitzpatrick</td>--}}
-                                {{--                                    <td>Regional Director</td>--}}
-                                {{--                                    <td>London</td>--}}
-                                {{--                                    <td>19</td>--}}
-                                {{--                                    <td>2010/03/17</td>--}}
-                                {{--                                    <td>$385,750</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Michael Silva</td>--}}
-                                {{--                                    <td>Marketing Designer</td>--}}
-                                {{--                                    <td>London</td>--}}
-                                {{--                                    <td>66</td>--}}
-                                {{--                                    <td>2012/11/27</td>--}}
-                                {{--                                    <td>$198,500</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Paul Byrd</td>--}}
-                                {{--                                    <td>Chief Financial Officer (CFO)</td>--}}
-                                {{--                                    <td>New York</td>--}}
-                                {{--                                    <td>64</td>--}}
-                                {{--                                    <td>2010/06/09</td>--}}
-                                {{--                                    <td>$725,000</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Gloria Little</td>--}}
-                                {{--                                    <td>Systems Administrator</td>--}}
-                                {{--                                    <td>New York</td>--}}
-                                {{--                                    <td>59</td>--}}
-                                {{--                                    <td>2009/04/10</td>--}}
-                                {{--                                    <td>$237,500</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Bradley Greer</td>--}}
-                                {{--                                    <td>Software Engineer</td>--}}
-                                {{--                                    <td>London</td>--}}
-                                {{--                                    <td>41</td>--}}
-                                {{--                                    <td>2012/10/13</td>--}}
-                                {{--                                    <td>$132,000</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Dai Rios</td>--}}
-                                {{--                                    <td>Personnel Lead</td>--}}
-                                {{--                                    <td>Edinburgh</td>--}}
-                                {{--                                    <td>35</td>--}}
-                                {{--                                    <td>2012/09/26</td>--}}
-                                {{--                                    <td>$217,500</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Jenette Caldwell</td>--}}
-                                {{--                                    <td>Development Lead</td>--}}
-                                {{--                                    <td>New York</td>--}}
-                                {{--                                    <td>30</td>--}}
-                                {{--                                    <td>2011/09/03</td>--}}
-                                {{--                                    <td>$345,000</td>--}}
-                                {{--                                </tr>--}}
-                                {{--                                <tr>--}}
-                                {{--                                    <td>Yuri Berry</td>--}}
-                                {{--                                    <td>Chief Marketing Officer (CMO)</td>--}}
-                                {{--                                    <td>New York</td>--}}
-                                {{--                                    <td>40</td>--}}
-                                {{--                                    <td>2009/06/25</td>--}}
-                                {{--                                    <td>$675,000</td>--}}
-                                {{--                                </tr>--}}
+                                <?php
+                                endforeach;
+                                ?>
+
+
                                 </tbody>
                             </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+{{--    <div class="modal fade" id="ModalKelas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
+{{--        <div class="modal-dialog" role="document">--}}
+{{--            <div class="modal-content">--}}
+{{--                <div class="modal-header">--}}
+{{--                    <h5 class="modal-title" id="exampleModalLabel">Edit Data Kelas</h5>--}}
+{{--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
+{{--                        <span aria-hidden="true">&times;</span>--}}
+{{--                    </button>--}}
+{{--                </div>--}}
+
+{{--                <div class="modal-body">--}}
+{{--                    <form  method="POST" action="{{ url('') }}/data_kelas/update">--}}
+{{--                        @csrf--}}
+{{--                        <div class="form-group">--}}
+{{--                            <label for="exampleInputKelas">{{ __('Kelas') }}</label>--}}
+{{--                            <input id="n-kelas"  type="text" class="form-control" name="nama" >--}}
+{{--                            <input id="id-kelas"  type="hidden" class="form-control" name="id">--}}
+
+{{--                            @error('kelas')--}}
+{{--                            <span class="invalid-feedback" role="alert">--}}
+{{--                                        <strong>{{ $message }}</strong>--}}
+{{--                                    </span>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+{{--                        <div class="modal-footer">--}}
+{{--                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
+{{--                            <button type="submit" class="btn btn-primary">--}}
+{{--                                {{ __('Submit') }}--}}
+{{--                            </button>--}}
+{{--                        </div>--}}
+{{--                    </form>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 @endsection
 
 

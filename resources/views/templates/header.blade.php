@@ -12,23 +12,80 @@
     <!-- CSRF Token -->
     <meta name="_token" content="P8Y7YrIUH6LSkPBag5pjb6bCyyqhdrNqDsAQHdMW">
 
-    <link rel="shortcut icon" href="pus_app.ico">
+    <link rel="icon" type="image/x-icon" href="landingpages_assets/assets/img/navbar-logo.png" />
 
     <!-- plugin css -->
-    <link media="all" type="text/css" rel="stylesheet" href="fonts/feather-font/css/iconfont.css">
-    <link media="all" type="text/css" rel="stylesheet" href="plugins/perfect-scrollbar/perfect-scrollbar.css">
+    <link media="all" type="text/css" rel="stylesheet" href="{{url('fonts/feather-font/css/iconfont.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{url('plugins/perfect-scrollbar/perfect-scrollbar.css')}}">
     <!-- end plugin css -->
 
-    <link media="all" type="text/css" rel="stylesheet" href="plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
-    <link media="all" type="text/css" rel="stylesheet" href="plugins/select2/select2.min.css">
+    <!---Feather css-->
+    <link href="{{url('plugins/feather/feather.css')}}" rel="stylesheet">
+
+    <link media="all" type="text/css" rel="stylesheet" href="{{url('plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{url('plugins/select2/select2.min.css')}}">
 
     <!-- common css -->
-    <link media="all" type="text/css" rel="stylesheet" href="css/app.css">
+    <link media="all" type="text/css" rel="stylesheet" href="{{url('css/app.css')}}">
     <!-- end common css -->
 
+    <link media="all" type="text/css" rel="stylesheet" href="{{url('plugins/datatables-net/dataTables.bootstrap4.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{url('plugins/datatables-net-bs4/buttons.dataTables.min.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{url('plugins/datatables-net-bs4/searchPanes.dataTables.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{url('plugins/datatables-net-bs4/select.dataTables.min.css')}}">
 
-    <!-- Global site tag (gtag.js) - Google Analytics start -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146586338-1"></script>
+{{--    <!---Fontawesome css-->--}}
+{{--    <link href="{{url('plugins/fontawesome-free/css/all.min.css')}}" rel="stylesheet">--}}
+
+{{--    <!---Ionicons css-->--}}
+{{--    <link href="{{url('plugins/ionicons/css/ionicons.min.css')}}" rel="stylesheet">--}}
+
+{{--    <!---Typicons css-->--}}
+{{--    <link href="{{url('plugins/typicons.font/typicons.css')}}" rel="stylesheet">--}}
+
+{{--    <!---Feather css-->--}}
+{{--    <link href="{{url('plugins/feather/feather.css')}}" rel="stylesheet">--}}
+
+{{--    <!---Falg-icons css-->--}}
+{{--    <link href="{{url('plugins/flag-icon-css/css/flag-icon.min.css')}}" rel="stylesheet">--}}
+
+{{--    <!---Style css-->--}}
+{{--    <link href="{{url('css/style.css')}}" rel="stylesheet">--}}
+{{--    <link href="{{url('css/custom-style.css')}}" rel="stylesheet">--}}
+{{--    <link href="{{url('css/skins.css')}}" rel="stylesheet">--}}
+{{--    <link href="{{url('css/dark-style.css')}}" rel="stylesheet">--}}
+{{--    <link href="{{url('css/custom-dark-style.css')}}" rel="stylesheet">--}}
+
+
+{{--    <!---Fileupload css-->--}}
+{{--    <link href="{{url('plugins/fileuploads/css/fileupload.css')}}" rel="stylesheet">--}}
+{{--    <!---Fancy uploader css-->--}}
+{{--    <link href="{{url('plugins/fancyuploder/fancy_fileupload.css')}}" rel="stylesheet">--}}
+{{--    <!---Select2 css-->--}}
+{{--    <link href="{{url('plugins/select2/css/select2.min.css')}}" rel="stylesheet">--}}
+{{--    <!--Sumoselect css-->--}}
+{{--    <link href="{{url('plugins/sumoselect/sumoselect.css')}}" rel="stylesheet">--}}
+{{--    <!--Mutipleselect css-->--}}
+{{--    <link rel="stylesheet" href="{{url('plugins/multipleselect/multiple-select.css')}}">--}}
+{{--    <!---Jquery.mCustomScrollbar css-->--}}
+{{--    <link href="{{url('plugins/jquery.mCustomScrollbar/jquery.mCustomScrollbar.css')}}" rel="stylesheet">--}}
+
+{{--    <!---Sidebar css-->--}}
+{{--    <link href="{{url('plugins/sidebar/sidebar.css')}}" rel="stylesheet">--}}
+
+{{--    <!---Sidemenu css-->--}}
+{{--    <link href="{{url('plugins/sidemenu/sidemenu.css')}}" rel="stylesheet">--}}
+
+{{--    <!---DataTables css-->--}}
+{{--    <link href="{{url('plugins/datatable/dataTables.bootstrap4.min.css')}}" rel="stylesheet">--}}
+{{--    <link href="{{url('plugins/datatable/responsivebootstrap4.min.css')}}" rel="stylesheet">--}}
+{{--    <link href="{{url('plugins/datatable/fileexport/buttons.bootstrap4.min.css')}}" rel="stylesheet">--}}
+
+{{--    <!---Switcher css-->--}}
+{{--    <link href="{{url('switcher/css/switcher.css')}}" rel="stylesheet">--}}
+{{--    <link href="{{url('switcher/demo.css')}}" rel="stylesheet">--}}
+{{--    <!-- Global site tag (gtag.js) - Google Analytics start -->--}}
+{{--    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146586338-1"></script>--}}
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -39,9 +96,9 @@
     <!-- Google Analytics end -->
 
 </head>
-<body data-base-url="https://www.nobleui.com/laravel/template/light">
+{{--<body data-base-url="https://www.nobleui.com/laravel/template/light">--}}
 
-<script src="js/spinner.js"></script>
+<script src="{{ url('js/spinner.js')}}"></script>
 
 <div class="main-wrapper" id="app">
     <nav class="sidebar">
@@ -59,13 +116,13 @@
             <ul class="nav">
                 <li class="nav-item nav-category">Main</li>
                 <li class="nav-item active">
-                    <a href="home" class="nav-link">
-                        <i class="link-icon" data-feather="box"></i>
+                    <a href="{{ url('home') }}" class="nav-link">
+                        <i class="link-icon" data-feather="airplay"></i>
                         <span class="link-title">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a href="saldo" class="nav-link">
+                    <a href="{{ url('saldo') }}" class="nav-link">
                         <i class="link-icon" data-feather="dollar-sign"></i>
                         <span class="link-title">Saldo</span>
                     </a>
@@ -91,16 +148,26 @@
 {{--                        </ul>--}}
 {{--                    </div>--}}
 {{--                </li>--}}
-
                 <li class="nav-item ">
-                    <a href="data_kelas" class="nav-link">
+                    <a href="{{ url('data_jurusan') }}" class="nav-link">
+                        <i class="link-icon" data-feather="briefcase"></i>
+                        <span class="link-title">Data Jurusan</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="{{ url('data_kelas') }}" class="nav-link">
                         <i class="link-icon" data-feather="home"></i>
                         <span class="link-title">Data Kelas</span>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a href="data_siswa" class="nav-link">
+                    <a href="{{ url('data_orangtua') }}" class="nav-link">
                         <i class="link-icon" data-feather="user"></i>
+                        <span class="link-title">Data Orang Tua</span>
+                    </a>
+                </li><li class="nav-item ">
+                    <a href="{{ url('data_siswa') }}" class="nav-link">
+                        <i class="link-icon" data-feather="users"></i>
                         <span class="link-title">Data Siswa</span>
                     </a>
                 </li>
@@ -114,10 +181,10 @@
                     <div class="collapse " id="pembayaran_rutin">
                         <ul class="nav sub-menu">
                             <li class="nav-item">
-                                <a href="pembayaran_rutin" class="nav-link ">Data Pembayaran</a>
+                                <a href="{{ url('pembayaran_rutin') }}" class="nav-link ">Data Pembayaran</a>
                             </li>
                             <li class="nav-item">
-                                <a href="pembayaran_siswa_rutin" class="nav-link ">Pembayaran Siswa</a>
+                                <a href="{{ url('pembayaran_siswa_rutin') }}" class="nav-link ">Pembayaran Siswa</a>
                             </li>
                         </ul>
                     </div>
@@ -131,10 +198,10 @@
                     <div class="collapse " id="sekali_bayar">
                         <ul class="nav sub-menu">
                             <li class="nav-item">
-                                <a href="pembayaran_sekali" class="nav-link ">Data Pembayaran</a>
+                                <a href="{{ url('pembayaran_sekali') }}" class="nav-link ">Data Pembayaran</a>
                             </li>
                             <li class="nav-item">
-                                <a href="pembayaran_siswa_sekali" class="nav-link ">Pembayaran Siswa</a>
+                                <a href="{{ url('pembayaran_siswa_sekali') }}" class="nav-link ">Pembayaran Siswa</a>
                             </li>
                         </ul>
                     </div>
@@ -151,17 +218,17 @@
                     <div class="collapse " id="laporan">
                         <ul class="nav sub-menu">
                             <li class="nav-item">
-                                <a href="laporan" class="nav-link ">Laporan Tagihan</a>
+                                <a href="{{ url('laporan') }}" class="nav-link ">Laporan Tagihan</a>
                             </li>
                             <li class="nav-item">
-                                <a href="laporan_pemasukan" class="nav-link ">Laporan Pemasukan</a>
+                                <a href="{{ url('laporan_pemasukan') }}" class="nav-link ">Laporan Pemasukan</a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li class="nav-item ">
-                    <a href="laporan_rekap" class="nav-link">
-                        <i class="link-icon" data-feather="file-text"></i>
+                    <a href="{{ url('laporan_rekap') }}" class="nav-link">
+                        <i class="link-icon" data-feather="folder"></i>
                         <span class="link-title">Rekap Laporan</span>
                     </a>
                 </li>
@@ -289,187 +356,54 @@
                 <i data-feather="menu"></i>
             </a>
             <div class="navbar-content">
-                <form class="search-form">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <i data-feather="search"></i>
-                            </div>
-                        </div>
-                        <input type="text" class="form-control" id="navbarForm" placeholder="Search here...">
-                    </div>
-                </form>
+{{--                <form class="search-form">--}}
+{{--                    <div class="input-group">--}}
+{{--                        <div class="input-group-prepend">--}}
+{{--                            <div class="input-group-text">--}}
+{{--                                <i data-feather="search"></i>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <input type="text" class="form-control" id="navbarForm" placeholder="Search here...">--}}
+{{--                    </div>--}}
+{{--                </form>--}}
                 <ul class="navbar-nav">
-                    <li class="nav-item dropdown nav-apps">
-                        <a class="nav-link dropdown-toggle" href="#" id="appsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i data-feather="grid"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="appsDropdown">
-                            <div class="dropdown-header d-flex align-items-center justify-content-between">
-                                <p class="mb-0 font-weight-medium">Web Apps</p>
-                                <a href="javascript:;" class="text-muted">Edit</a>
-                            </div>
-                            <div class="dropdown-body">
-                                <div class="d-flex align-items-center apps">
-                                    <a href="apps/chat.html"><i data-feather="message-square" class="icon-lg"></i><p>Chat</p></a>
-                                    <a href="apps/calendar.html"><i data-feather="calendar" class="icon-lg"></i><p>Calendar</p></a>
-                                    <a href="email/inbox.html"><i data-feather="mail" class="icon-lg"></i><p>Email</p></a>
-                                    <a href="general/profile.html"><i data-feather="instagram" class="icon-lg"></i><p>Profile</p></a>
-                                </div>
-                            </div>
-                            <div class="dropdown-footer d-flex align-items-center justify-content-center">
-                                <a href="javascript:;">View all</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown nav-messages">
-                        <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i data-feather="mail"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="messageDropdown">
-                            <div class="dropdown-header d-flex align-items-center justify-content-between">
-                                <p class="mb-0 font-weight-medium">9 New Messages</p>
-                                <a href="javascript:;" class="text-muted">Clear all</a>
-                            </div>
-                            <div class="dropdown-body">
-                                <a href="javascript:;" class="dropdown-item">
-                                    <div class="figure">
-                                        <img src="images/faces/face2.jpg" alt="userr">
-                                    </div>
-                                    <div class="content">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <p>Leonardo Payne</p>
-                                            <p class="sub-text text-muted">2 min ago</p>
-                                        </div>
-                                        <p class="sub-text text-muted">Project status</p>
-                                    </div>
-                                </a>
-                                <a href="javascript:;" class="dropdown-item">
-                                    <div class="figure">
-                                        <img src="images/faces/face3.jpg" alt="userr">
-                                    </div>
-                                    <div class="content">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <p>Carl Henson</p>
-                                            <p class="sub-text text-muted">30 min ago</p>
-                                        </div>
-                                        <p class="sub-text text-muted">Client meeting</p>
-                                    </div>
-                                </a>
-                                <a href="javascript:;" class="dropdown-item">
-                                    <div class="figure">
-                                        <img src="images/faces/face4.jpg" alt="userr">
-                                    </div>
-                                    <div class="content">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <p>Jensen Combs</p>
-                                            <p class="sub-text text-muted">1 hrs ago</p>
-                                        </div>
-                                        <p class="sub-text text-muted">Project updates</p>
-                                    </div>
-                                </a>
-                                <a href="javascript:;" class="dropdown-item">
-                                    <div class="figure">
-                                        <img src="images/faces/face5.jpg" alt="userr">
-                                    </div>
-                                    <div class="content">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <p>Amiah Burton</p>
-                                            <p class="sub-text text-muted">2 hrs ago</p>
-                                        </div>
-                                        <p class="sub-text text-muted">Project deadline</p>
-                                    </div>
-                                </a>
-                                <a href="javascript:;" class="dropdown-item">
-                                    <div class="figure">
-                                        <img src="images/faces/face6.jpg" alt="userr">
-                                    </div>
-                                    <div class="content">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <p>Yaretzi Mayo</p>
-                                            <p class="sub-text text-muted">5 hr ago</p>
-                                        </div>
-                                        <p class="sub-text text-muted">New record</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="dropdown-footer d-flex align-items-center justify-content-center">
-                                <a href="javascript:;">View all</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown nav-notifications">
-                        <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i data-feather="bell"></i>
-                            <div class="indicator">
-                                <div class="circle"></div>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="notificationDropdown">
-                            <div class="dropdown-header d-flex align-items-center justify-content-between">
-                                <p class="mb-0 font-weight-medium">6 New Notifications</p>
-                                <a href="javascript:;" class="text-muted">Clear all</a>
-                            </div>
-                            <div class="dropdown-body">
-                                <a href="javascript:;" class="dropdown-item">
-                                    <div class="icon">
-                                        <i data-feather="user-plus"></i>
-                                    </div>
-                                    <div class="content">
-                                        <p>New customer registered</p>
-                                        <p class="sub-text text-muted">2 sec ago</p>
-                                    </div>
-                                </a>
-                                <a href="javascript:;" class="dropdown-item">
-                                    <div class="icon">
-                                        <i data-feather="gift"></i>
-                                    </div>
-                                    <div class="content">
-                                        <p>New Order Recieved</p>
-                                        <p class="sub-text text-muted">30 min ago</p>
-                                    </div>
-                                </a>
-                                <a href="javascript:;" class="dropdown-item">
-                                    <div class="icon">
-                                        <i data-feather="alert-circle"></i>
-                                    </div>
-                                    <div class="content">
-                                        <p>Server Limit Reached!</p>
-                                        <p class="sub-text text-muted">1 hrs ago</p>
-                                    </div>
-                                </a>
-                                <a href="javascript:;" class="dropdown-item">
-                                    <div class="icon">
-                                        <i data-feather="layers"></i>
-                                    </div>
-                                    <div class="content">
-                                        <p>Apps are ready for update</p>
-                                        <p class="sub-text text-muted">5 hrs ago</p>
-                                    </div>
-                                </a>
-                                <a href="javascript:;" class="dropdown-item">
-                                    <div class="icon">
-                                        <i data-feather="download"></i>
-                                    </div>
-                                    <div class="content">
-                                        <p>Download completed</p>
-                                        <p class="sub-text text-muted">6 hrs ago</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="dropdown-footer d-flex align-items-center justify-content-center">
-                                <a href="javascript:;">View all</a>
-                            </div>
-                        </div>
-                    </li>
+
+{{--                    <li class="nav-item dropdown nav-messages">--}}
+{{--                        <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                            <i data-feather="mail"></i>--}}
+{{--                        </a>--}}
+{{--                        <div class="dropdown-menu" aria-labelledby="messageDropdown">--}}
+{{--                            <div class="dropdown-header d-flex align-items-center justify-content-between">--}}
+{{--                                <p class="mb-0 font-weight-medium">New Messages</p>--}}
+{{--                                <a href="{{ url('javascript:;')}}" class="text-muted">Clear all</a>--}}
+{{--                            </div>--}}
+{{--                            <div class="dropdown-body">--}}
+{{--                                <a href="{{ url('javascript:;')}}" class="dropdown-item">--}}
+{{--                                    <div class="figure">--}}
+{{--                                        <img src="{{ url('images/faces/face2.jpg')}}" alt="userr">--}}
+{{--                                    </div>--}}
+{{--                                    <div class="content">--}}
+{{--                                        <div class="d-flex justify-content-between align-items-center">--}}
+{{--                                            <p>Leonardo Payne</p>--}}
+{{--                                            <p class="sub-text text-muted">2 min ago</p>--}}
+{{--                                        </div>--}}
+{{--                                        <p class="sub-text text-muted">Project status</p>--}}
+{{--                                    </div>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                            <div class="dropdown-footer d-flex align-items-center justify-content-center">--}}
+{{--                                <a href="{{ url('javascript:;')}}">View all</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
                     <li class="nav-item dropdown nav-profile">
                         <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="images/faces/face1.jpg" alt="profile">
+                            <img src="{{ url('images/faces/face1.jpg')}}" alt="profile">
                         </a>
                         <div class="dropdown-menu" aria-labelledby="profileDropdown">
                             <div class="dropdown-header d-flex flex-column align-items-center">
                                 <div class="figure mb-3">
-                                    <img src="images/faces/face1.jpg" alt="">
+                                    <img src="{{ url('images/faces/face1.jpg')}}" alt="">
                                 </div>
                                 <div class="info text-center">
                                     <p class="name font-weight-bold mb-0">Amiah Burton</p>
@@ -479,23 +413,23 @@
                             <div class="dropdown-body">
                                 <ul class="profile-nav p-0 pt-3">
                                     <li class="nav-item">
-                                        <a href="general/profile.html" class="nav-link">
+                                        <a href="{{ url('general/profile.html')}}" class="nav-link">
                                             <i data-feather="user"></i>
                                             <span>Profile</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="javascript:;" class="nav-link">
+                                        <a href="{{ url('javascript:;')}}" class="nav-link">
                                             <i data-feather="edit"></i>
                                             <span>Edit Profile</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="javascript:;" class="nav-link">
-                                            <i data-feather="repeat"></i>
-                                            <span>Switch User</span>
-                                        </a>
-                                    </li>
+{{--                                    <li class="nav-item">--}}
+{{--                                        <a href="{{ url('javascript:;')}}" class="nav-link">--}}
+{{--                                            <i data-feather="repeat"></i>--}}
+{{--                                            <span>Switch User</span>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
                                     <li class="nav-item">
                                         <a href="{{ route('logout') }}" class="nav-link"
                                            onclick="event.preventDefault();
@@ -940,39 +874,240 @@
 {{--            </div> <!-- row -->--}}
 {{--        </div>--}}
         <footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between">
-            <p class="text-muted text-center text-md-left">Copyright © 2020 <a href="https://www.nobleui.com/" target="_blank">PUSApp</a>. All rights reserved</p>
+            <p class="text-muted text-center text-md-left">Copyright © 2020 <a href="https://www.nobleui.com/" target="_blank">KYAS.Dev</a> All rights reserved</p>
             <p class="text-muted text-center text-md-left mb-0 d-none d-md-block">Handcrafted With <i class="mb-1 text-primary ml-1 icon-small" data-feather="heart"></i></p>
         </footer>
     </div>
 </div>
 
 <!-- base js -->
-<script src="js/app.js"></script>
-<script src="plugins/feather-icons/feather.min.js"></script>
-<script src="plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="{{url('js/app.js')}}"></script>
+<script src="{{url('plugins/feather-icons/feather.min.js')}}"></script>
+<script src="{{url('plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
 <!-- end base js -->
 
 <!-- plugin js -->
-<script src="plugins/chartjs/Chart.min.js"></script>
-<script src="plugins/jquery.flot/jquery.flot.js"></script>
-<script src="plugins/jquery.flot/jquery.flot.resize.js"></script>
-<script src="plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-<script src="plugins/apexcharts/apexcharts.min.js"></script>
-<script src="plugins/progressbar-js/progressbar.min.js"></script>
-<script src="plugins/datatables-net/jquery.dataTables.js"></script>
-<script src="plugins/datatables-net-bs4/dataTables.bootstrap4.js"></script>
-<script src="plugins/select2/select2.min.js"></script>
+<script src="{{url('plugins/chartjs/Chart.min.js')}}"></script>
+<script src="{{url('plugins/jquery.flot/jquery.flot.js')}}"></script>
+<script src="{{url('plugins/jquery.flot/jquery.flot.resize.js')}}"></script>
+<script src="{{url('plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{url('plugins/apexcharts/apexcharts.min.js')}}"></script>
+<script src="{{url('plugins/progressbar-js/progressbar.min.js')}}"></script>
+<script src="{{url('plugins/datatables-net/jquery.dataTables.js')}}"></script>
+<script src="{{url('plugins/datatables-net-bs4/dataTables.bootstrap4.js')}}"></script>
+<script src="{{url('plugins/select2/select2.min.js')}}"></script>
 <!-- end plugin js -->
 
 <!-- common js -->
-<script src="js/template.js"></script>
+<script src="{{url('js/template.js')}}"></script>
 <!-- end common js -->
+<script src="{{url('plugins/datatables-net-bs4/dataTables.buttons.min.js')}}"></script>
+<script src="{{url('plugins/datatables-net-bs4/dataTables.searchPanes.min.js')}}"></script>
+<script src="{{url('plugins/datatables-net-bs4/dataTables.select.min.js')}}"></script>
 
-<script src="js/dashboard.js"></script>
-<script src="js/datepicker.js"></script>
-<script src="js/select2.js"></script>
+
+<script src="{{url('js/dashboard.js')}}"></script>
+<script src="{{url('js/datepicker.js')}}"></script>
+<script src="{{url('js/select2.js')}}"></script>
+<script src="{{url('js/data-table.js')}}"></script>
 {{--<script src="js/data-table.js"></script>--}}
-</body>
+{{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>--}}
+{{--<script type="text/javascript">--}}
+{{--    var timestamp = '<?=time();?>';--}}
+{{--    function updateTime(){--}}
+{{--        $('#time').html(Date(timestamp));--}}
+{{--        timestamp++;--}}
+{{--    }--}}
+{{--    $(function(){--}}
+{{--        setInterval(updateTime, 1000);--}}
+{{--    });--}}
+{{--</script>--}}
+<!-- Jquery js-->
+{{--<script src="{{url('plugins/jquery/jquery.min.js')}}"></script>--}}
+{{--<script src="{{url('plugins/jquery-mask-money/dist/jquery.maskMoney.min.js')}}"></script>--}}
+
+
+{{--<!-- Bootstrap js-->--}}
+{{--<script src="{{url('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>--}}
+
+{{--<!-- Ionicons js-->--}}
+{{--<script src="{{url('assets/plugins/ionicons/ionicons.js')}}"></script>--}}
+
+{{--<!-- Rating js-->--}}
+{{--<script src="{{url('plugins/rating/jquery.rating-stars.js')}}"></script>--}}
+
+{{--<!-- Flot Chart js-->--}}
+{{--<script src="{{url('plugins/jquery.flot/jquery.flot.js')}}"></script>--}}
+{{--<script src="{{url('plugins/jquery.flot/jquery.flot.resize.js')}}"></script>--}}
+{{--<script src="{{url('js/chart.flot.sampledata.js')}}"></script>--}}
+{{--<!-- Chart.Bundle js-->--}}
+{{--<script src="{{url('plugins/chart.js/Chart.bundle.min.js')}}"></script>--}}
+{{--<!-- Peity js-->--}}
+{{--<script src="{{url('plugins/peity/jquery.peity.min.js')}}"></script>--}}
+{{--<!-- Jquery-Ui js-->--}}
+{{--<script src="{{url('plugins/jquery-ui/ui/widgets/datepicker.js')}}"></script>--}}
+{{--<!-- Select2 js-->--}}
+{{--<script src="{{url('plugins/select2/js/select2.min.js')}}"></script>--}}
+{{--<!--MutipleSelect js-->--}}
+{{--<script src="{{url('plugins/multipleselect/multiple-select.js')}}"></script>--}}
+{{--<script src="{{url('plugins/multipleselect/multi-select.js')}}"></script>--}}
+{{--<!-- Jquery.mCustomScrollbar js-->--}}
+{{--<script src="{{url('plugins/jquery.mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>--}}
+{{--<!-- index -->--}}
+{{--<script src="{{url('assets/js/index.js')}}"></script>--}}
+
+{{--<!-- Perfect-scrollbar js-->--}}
+{{--<script src="{{url('plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>--}}
+
+{{--<!-- Sidemenu js-->--}}
+{{--<script src="{{url('plugins/sidemenu/sidemenu.js')}}"></script>--}}
+
+{{--<!-- Sidebar js-->--}}
+{{--<script src="{{url('plugins/sidebar/sidebar.js')}}"></script>--}}
+
+{{--<!-- Sticky js-->--}}
+{{--<script src="{{url('js/sticky.js')}}"></script>--}}
+
+{{--<!-- Switcher js-->--}}
+{{--<script src="{{url('switcher/js/switcher.js')}}"></script>--}}
+
+{{--<!-- Custom js-->--}}
+{{--<script src="{{url('js/custom.js')}}"></script>--}}
+
+{{--<!--Sumoselect js-->--}}
+{{--<script src="{{url('plugins/sumoselect/jquery.sumoselect.js')}}"></script>--}}
+{{--<!-- Form-elements js-->--}}
+{{--<script src="{{url('assets/js/advanced-form-elements.js')}}"></script>--}}
+{{--<script src="{{url('js/select2.js')}}"></script>--}}
+
+{{--<!--Fileuploads js-->--}}
+{{--<script src="{{url('plugins/fileuploads/js/fileupload.js')}}"></script>--}}
+{{--<script src="{{url('plugins/fileuploads/js/file-upload.js')}}"></script>--}}
+
+
+{{--<!-- Data Table js -->--}}
+{{--<script src="{{url('plugins/datatable/jquery.dataTables.min.js')}}"></script>--}}
+{{--<script src="{{url('plugins/datatable/dataTables.bootstrap4.min.js')}}"></script>--}}
+<script src="{{url('js/table-data.js')}}"></script>
+{{--<script src="{{url('plugins/datatable/dataTables.responsive.min.js')}}"></script>--}}
+{{--<script src="{{url('plugins/datatable/fileexport/dataTables.buttons.min.js')}}"></script>--}}
+{{--<script src="{{url('plugins/datatable/fileexport/buttons.bootstrap4.min.js')}}"></script>--}}
+{{--<script src="{{url('plugins/datatable/fileexport/jszip.min.js')}}"></script>--}}
+{{--<script src="{{url('plugins/datatable/fileexport/pdfmake.min.js')}}"></script>--}}
+{{--<script src="{{url('plugins/datatable/fileexport/vfs_fonts.js')}}"></script>--}}
+{{--<script src="{{url('plugins/datatable/fileexport/buttons.html5.min.js')}}"></script>--}}
+{{--<script src="{{url('plugins/datatable/fileexport/buttons.print.min.js')}}"></script>--}}
+{{--<script src="{{url('plugins/datatable/fileexport/buttons.colVis.min.js')}}"></script>--}}
+
+<!-- Sweet-Alert js-->
+<script src="{{url('plugins/sweet-alert/sweetalert.min.js')}}"></script>
+<script src="{{url('plugins/sweet-alert/dark-jquery.sweet-alert.js')}}"></script>
+
+<script>
+    var root = window.origin + '/spus/public/'
+
+    $('.edit-jurusan').click(function () {
+        var id = $(this).val();
+        var getUrl = root + 'api/jurusan/' + id;
+
+        $.ajax({
+            url : getUrl,
+            type : 'ajax',
+            method : 'get',
+            datatype : 'json',
+            success: function (response){
+                var hasil = JSON.parse(response);
+                console.log(hasil.hasil);
+
+                $('#n-jurusan').val(hasil.hasil.nama_jurusan);
+                $('#id-jurusan').val(hasil.hasil.id_jurusan);
+            },
+            error:function (response){
+                console.log(response.status + 'error');
+            }
+        })
+
+    })
+</script>
+
+<script>
+    var root = window.origin + '/spus/public/'
+
+    $('.edit-kelas').click(function () {
+        var id = $(this).val();
+        var getUrl = root + 'api/kelas/' + id;
+
+        $.ajax({
+            url : getUrl,
+            type : 'ajax',
+            method : 'get',
+            datatype : 'json',
+            success: function (response){
+                var hasil = JSON.parse(response);
+                console.log(hasil.hasil);
+
+                $('#n-kelas').val(hasil.hasil.nama_kelas);
+                $('#id-kelas').val(hasil.hasil.id_kelas);
+            },
+            error:function (response){
+                console.log(response.status + 'error');
+            }
+        })
+
+    })
+</script>
+
+<script type="text/javascript">
+    if (window.location.href === 'http://localhost/spus/public/home'){
+        var str = document.getElementById('typewriter').innerHTML,
+            i = 0,
+            isTag,
+            text;
+
+        (function type() {
+            text = str.slice(0, ++i);
+            if (text === str) return;
+
+            document.getElementById('typewriter').innerHTML = text;
+
+            var char = text.slice(-1);
+            if( char === '<' ) isTag = true;
+            if( char === '>' ) isTag = false;
+
+            if (isTag) return type();
+            setTimeout(type, 110);
+        }());
+
+        (function () {
+            function checkTime(i) {
+                return (i < 10) ? "0" + i : i;
+            }
+
+            function startTime() {
+                var today = new Date(),
+                    // d = checkTime(today.getDay()),
+                    // M = checkTime(today.getMonth()),
+                    // Y = checkTime(today.getFullYear()),
+                    h = checkTime(today.getHours()),
+                    m = checkTime(today.getMinutes()),
+                    s = checkTime(today.getSeconds());
+                document.getElementById('time').innerHTML = h + ":" + m + ":" + s ;
+                t = setTimeout(function () {
+                    startTime()
+                }, 500);
+            }
+            startTime();
+        })();
+    }
+
+
+</script>
+
+
+<script type="text/javascript">
+
+</script>
+
 
 
 <!-- Mirrored from www.nobleui.com/laravel/template/light/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Mar 2020 13:30:30 GMT -->

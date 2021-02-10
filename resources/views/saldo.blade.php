@@ -27,7 +27,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="mb-3 mb-md-0">Saldo Anda</h4>
-                        <h4><span class="badge badge-success" style="margin-top: 20px">Rp.100.000.0000</span></h4></td>
+                        <h4><span class="badge badge-success" style="margin-top: 20px">Rp.100.000.0000</span></h4>
                         <button type="button" class="btn btn-primary btn-icon-text float-right" style="margin-top: 20px" data-toggle="modal" data-target="#exampleModal">
                             <i class="btn-icon-prepend" data-feather="credit-card"></i>
                             Tarik
