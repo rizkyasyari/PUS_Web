@@ -21,7 +21,8 @@
 {{--    </div>--}}
 {{--</div>--}}
 
-<div class="page-content">
+<div class="container-fluid " style="margin-top: 10px">
+    <!-- Page Header -->
     <div class="row" style="width: 100%" align="center">
         <div class="col-12 grid-margin">
             <div class="card">

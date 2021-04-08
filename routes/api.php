@@ -20,5 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('jurusan/{id}','ApiController@ambil_jurusan');
 Route::get('kelas/{id}','ApiController@ambil_kelas');
+Route::get('get_kelas/{kode}','ApiController@ambil_kelas_by_kode');
+//Route::get('get_pembayaran/{id}','ApiController@ambil_pembayaran');
 
 Route::get('users','ApiController@ambil_users');
+
+
+Route::post('login','Api\AuthApiController@login');
+Route::post('get-anak','Api\OrangtuaApiController@getAnak');

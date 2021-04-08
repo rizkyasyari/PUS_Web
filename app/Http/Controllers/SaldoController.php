@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class SaldoController extends Controller
 {
@@ -23,6 +25,10 @@ class SaldoController extends Controller
      */
     public function index()
     {
-        return view('saldo');
+        $id = Auth::user()->id_akses;
+        $users = DB::table('users') ->where('id_sekolah','=', $id)
+            ->join('sekolah','sekolah.id_sekolah','=','users.id_akses')
+            ->get();
+        return view('saldo',['users'=>$users]);
     }
 }

@@ -39,6 +39,7 @@
                                     @enderror
                                 </div>
 
+
                                 <div class="form-group">
                                     <label for="exampleInputKelas">{{ __('Wali Kelas') }}</label>
                                     <input id="wali_kelas" type="text" class="form-control @error('wali_kelas') is-invalid @enderror" name="wali_kelas" value="{{ $kelas->wali_kelas }}" required autocomplete="wali_kelas" autofocus>
@@ -60,6 +61,17 @@
                                     </span>
                                     @enderror
                                 </div>
+
+{{--                                <div class="form-group">--}}
+{{--                                    <label for="exampleInputKelas">{{ __('Tahun Ajaran') }}</label>--}}
+{{--                                    <input id="tahun_ajaran" type="number" class="form-control @error('tahun_ajaran') is-invalid @enderror" name="tahun_ajaran" value="{{ $kelas->tahun_ajaran }}" required autocomplete="tahun_ajaran" autofocus>--}}
+
+{{--                                    @error('tahun_ajaran')--}}
+{{--                                    <span class="invalid-feedback" role="alert">--}}
+{{--                                        <strong>{{ $message }}</strong>--}}
+{{--                                    </span>--}}
+{{--                                    @enderror--}}
+{{--                                </div>--}}
                                 <div class="modal-footer">
                                     <div class="form-group float-right">
                                         <button class="btn btn-primary ripple" type="submit" value="Simpan Data">{{ __('Submit') }}</button>

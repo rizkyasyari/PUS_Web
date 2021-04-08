@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use function GuzzleHttp\_current_time;
@@ -28,13 +29,17 @@ class DataOrangtuaController extends Controller
      */
     public function index()
     {
-        $orang_tua = DB::table('orang_tua')->get();
+        $id = Auth::user()->id_akses;
+        $orang_tua = DB::table('orang_tua')
+            ->where('id_sekolah','=', $id)->get();
         return view('data_orangtua',['orang_tua'=>$orang_tua]);
     }
     public function tambah(Request $request)
     {
+        $idSekolah = Auth::user()->id_akses;
         $orang_tua = DB::table('orang_tua')->insertGetId([
                 'orang_tua' => $request->orang_tua,
+                'id_sekolah' => Auth::user()->id_akses,
                 'email' => $request->email,
                 'no_hp' => $request->no_hp,
                 'alamat' => $request->alamat,
@@ -47,6 +52,7 @@ class DataOrangtuaController extends Controller
                 'status' => 'Orangtua',
                 'password' => Hash::make($request->password),
                 'id_akses' => $orang_tua,
+                'akun' => 'Aktif',
             ]);
 
         // alihkan halaman ke halaman pegawai

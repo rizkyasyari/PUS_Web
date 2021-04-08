@@ -56,8 +56,28 @@ Route::get('/laporan_rekap', 'LaporanTagihanController@laporan_rekap')->name('la
 
 Route::get('/pembayaran_rutin', 'PembayaranRutinController@index')->name('pembayaran_rutin');
 Route::post('/pembayaran_rutin/tambah', 'PembayaranRutinController@tambah');
+Route::get('/pembayaran_rutin/hapus/{id}', 'PembayaranRutinController@hapus');
 
 Route::get('/pembayaran_sekali', 'PembayaranSekaliController@index')->name('pembayaran_sekali');
+Route::post('/pembayaran_sekali/tambah', 'PembayaranSekaliController@tambah');
+Route::get('/pembayaran_sekali/hapus/{id}', 'PembayaranSekaliController@hapus');
+
 Route::get('/pembayaran_siswa_rutin', 'PembayaranRutinController@siswa_rutin')->name('pembayaran_siswa_rutin');
+Route::post('/pembayaran_siswa_rutin/tambah', 'PembayaranRutinController@siswa_rutin_tambah');
 Route::get('/pembayaran_siswa_sekali', 'PembayaranSekaliController@siswa_sekali')->name('pembayaran_siswa_sekali');
+
+Route::get('/tagihan_rutin', 'PembayaranRutinController@tagihan_rutin')->name('tagihan_rutin');
+Route::post('/tagihan_rutin/tambah', 'PembayaranRutinController@tambah_tagihan');
+Route::get('/tagihan_rutin/hapus/{id}', 'PembayaranRutinController@hapus_tagihan');
+Route::get('/tagihan_sekali', 'PembayaranSekaliController@tagihan_sekali')->name('tagihan_sekali');
+
+
+Route::get('/pengguna', 'PenggunaController@index')->name('pengguna');
+Route::get('/pengguna/hapus/{id}', 'PenggunaController@hapus');
+Route::get('/pengguna/aktif/{id}', 'PenggunaController@aktif');
+Route::get('/pengguna/nonaktif/{id}', 'PenggunaController@nonaktif');
+
+Route::get('/tahun_ajaran', 'TahunAjaranController@index')->name('tahun_ajaran');
+Route::post('/tahun_ajaran/tambah', 'TahunAjaranController@tambah');
+Route::get('/tahun_ajaran/hapus/{id}', 'TahunAjaranController@hapus');
 

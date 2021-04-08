@@ -3,16 +3,17 @@
 @section('content')
 
 
-    <div class="page-content">
-        {{--        <nav class="page-breadcrumb">--}}
-        {{--            <ol class="breadcrumb">--}}
-        {{--                <li class="breadcrumb-item"><a href="#">Tables</a></li>--}}
-        {{--                <li class="breadcrumb-item active" aria-current="page">Data Table</li>--}}
-        {{--            </ol>--}}
-        {{--        </nav>--}}
-        <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
+    <div class="container-fluid">
+        <!-- Page Header -->
+        <div class="page-header">
             <div>
                 <h4 class="mb-3 mb-md-0">Jurusan</h4>
+            </div>
+            <div class="d-flex">
+                <button type="button" class="btn ripple btn-primary btn-with-icon" data-toggle="modal" data-target="#exampleModal" style="margin-right: 5px">
+                    <i class="fe fe-plus-circle"></i>
+                    Tambah Data
+                </button>
             </div>
         </div>
 
@@ -21,10 +22,6 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <button type="button" class="btn btn-primary btn-icon-text float-right" data-toggle="modal" data-target="#exampleModal" style="margin-right: 5px">
-                            <i class="btn-icon-prepend" data-feather="plus-circle"></i>
-                            Tambah Data
-                        </button>
 
 
 
@@ -70,9 +67,10 @@
 
                         <h6 class="card-title" style="margin-bottom: 30px">Jurusan yang tersedia</h6>
 
+                        <br>
                         <div class="table-responsive">
-                            <table id="" class="table display nowrap" style="height: 450px">
-                                <thead>
+                            <table id="dataTableJurusan" class="table display nowrap">
+                                <thead class="thead-light">
                                 <tr>
                                     <th style="width: 30px">No</th>
                                     <th>Nama</th>
@@ -87,13 +85,13 @@
                                 <tr>
                                     <td><?= $no++ ?></td>
                                     <td><?= $j->nama_jurusan?></td>
-                                    <td style="width: fit-content">
-                                        <button value="{{ $j->id_jurusan }}" href="hapus_jurusan" type="button" class="btn edit-jurusan btn-success btn-icon-text" data-toggle="modal" data-target="#ModalJurusan">
-                                            <i class="btn-icon-prepend" data-feather="edit"></i>
-                                            Edit Data
+                                    <td class="d-flex justify-content-between">
+                                        <button value="{{ $j->id_jurusan }}" href="hapus_jurusan" type="button" class="btn ripple btn-success btn-with-icon btn-md" data-toggle="modal" data-target="#ModalJurusan">
+                                            <i class="fe fe-edit"></i>
+                                            Edit
                                         </button>
                                         <a onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" href="{{url('/jurusan/hapus/'. $j->id_jurusan) }}" type="button" class="btn btn-danger btn-icon-text">
-                                            <i class="btn-icon-prepend" data-feather="trash-2"></i>
+                                            <i class="fe fe-trash-2"></i>
                                             Hapus Data
                                         </a>
                                     </td>

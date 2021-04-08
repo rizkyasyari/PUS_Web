@@ -25,14 +25,25 @@ class DataSiswaController extends Controller
      */
     public function index()
     {
-        $jurusan = DB::table('jurusan')->get();
-        $kelas = DB::table('kelas')->get();
+        $id = Auth::user()->id_akses;
+        $tahun_ajaran =  DB::table('tahun_ajaran')->where('id_sekolah','=', $id)->get();
+        $jurusan = DB::table('jurusan')->where('jurusan.id_sekolah','=', $id)->get();
+        $kelas = DB::table('kelas')
+            ->where('kelas.id_sekolah','=', $id)
+//            ->join('jurusan','kelas.id_jurusan','=','jurusan.id_jurusan')
+//            ->join('tahun_ajaran','kelas.id_tahun_ajaran','=','tahun_ajaran.id_ta')
+            ->get();
+
         $nama_siswa = DB::table('siswa')
+            ->where('siswa.id_sekolah','=', $id)
             ->join('kelas','siswa.id_kelas','=','kelas.id_kelas')
             ->join('orang_tua','siswa.id_orangtua','=','orang_tua.id_orangtua')
+            ->join('jurusan','siswa.id_jurusan','=','jurusan.id_jurusan')
+            ->join('tahun_ajaran','siswa.id_tahun_ajaran','=','tahun_ajaran.id_ta')
             ->get();
-        $orang_tua = DB::table('orang_tua')->get();
-        return view('data_siswa',['nama_siswa'=>$nama_siswa, 'jurusan'=>$jurusan, 'kelas'=>$kelas, 'orang_tua'=>$orang_tua]);
+
+        $orang_tua = DB::table('orang_tua')->where('orang_tua.id_sekolah','=', $id)->get();
+        return view('data_siswa',['nama_siswa'=>$nama_siswa, 'jurusan'=>$jurusan, 'kelas'=>$kelas, 'orang_tua'=>$orang_tua,'tahun_ajaran'=>$tahun_ajaran]);
     }
     public function tambah(Request $request)
     {
@@ -47,6 +58,7 @@ class DataSiswaController extends Controller
             'id_jurusan' => $request->id_jurusan,
             'id_kelas' => $request->id_kelas,
             'id_orangtua' => $request->id_orangtua,
+            'id_tahun_ajaran' => $request->id_tahun_ajaran,
             'id_sekolah' => $id
         ]);
         // alihkan halaman ke halaman pegawai
@@ -84,6 +96,7 @@ class DataSiswaController extends Controller
             'id_jurusan' => $request->id_jurusan,
             'id_kelas' => $request->id_kelas,
             'id_orangtua' => $request->id_orangtua,
+
         ]);
         // alihkan halaman ke halaman pegawai
         return redirect('/data_siswa');

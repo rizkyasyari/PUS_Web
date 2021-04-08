@@ -134,7 +134,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">{{ __('Password') }}</label>
-                                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                            <input id="MyPassword" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" >
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -142,12 +142,14 @@
                                             @enderror
 
                                         </div>
-                                        <div class="form-check form-check-flat form-check-primary">
-                                            <label class="form-check-label"  for="remember">
-                                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                                    {{ __('Remember Me') }}
+                                        <div class="form-check form-check-flat form-check-primary d-flex" >
+                                            <label class="switch"  for="remember" style="margin-right: 5px" >
+                                                <input class="form-check-input" type="checkbox" name="remember" id="remember" onclick="myFunction()" {{ old('remember') ? 'checked' : '' }} >
+                                                <span class="slider round"></span>
                                             </label>
+                                            {{ __('Lihat Password') }}
                                         </div>
+                                        <br>
                                         <div class="mt-3">
                                             <button type="submit" class="btn btn-primary">
                                                 {{ __('Login') }}
@@ -155,7 +157,7 @@
 
                                             @if (Route::has('password.request'))
                                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                    {{ __('Lupa Pasword?') }}
+{{--                                                    {{ __('Lupa Pasword?') }}--}}
                                                 </a>
                                             @endif
 {{--                                            <button type="button" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">--}}
@@ -187,6 +189,80 @@
 <!-- common js -->
 <script src="js/template.js"></script>
 <!-- end common js -->
+<script>
+    function myFunction() {
+        var x = document.getElementById("MyPassword");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+
+<style>
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 30px;
+        height: 17px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .2s;
+        transition: .2s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 13px;
+        width: 13px;
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        -webkit-transition: .2s;
+        transition: .2s;
+    }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(13px);
+        -ms-transform: translateX(13px);
+        transform: translateX(13px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 17px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+</style>
 
 </body>
 

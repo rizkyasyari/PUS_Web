@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="db_spus@localhost" uuid="8e43720a-660c-4659-bd29-6400bd622d2a">
+    <data-source source="LOCAL" name="db_spus@localhost" uuid="12f4f528-8aed-4e2e-8b28-ee9b0d653f7b">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/db_spus</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="serverTimezone" value="Asia/Jakarta" />
+      </driver-properties>
     </data-source>
   </component>
 </project>

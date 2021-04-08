@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
@@ -25,18 +26,21 @@ $this->middleware('auth');
 */
 public function index()
 {
+    $id = Auth::user()->id_akses;
     //get table jurusan dari db
-    $jurusan = DB::table('jurusan')->get();
+    $jurusan = DB::table('jurusan')->where('id_sekolah','=', $id)->get();
 return view('data_jurusan',['jurusan'=>$jurusan]);
 }
 
 
 public function tambah(Request $request)
     {
+        $id = Auth::user()->id_akses;
 //        var_dump("ok");exit();
         // insert data ke table pegawai
         DB::table('jurusan')->insert([
             'nama_jurusan' => $request->jurusan,
+            'id_sekolah' => $id
         ]);
         // alihkan halaman ke halaman pegawai
         return redirect('/data_jurusan');

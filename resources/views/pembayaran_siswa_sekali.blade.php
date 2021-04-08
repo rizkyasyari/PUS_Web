@@ -1,23 +1,24 @@
 @extends('templates.header')
 
 @section('content')
-    <div class="page-content">
-        {{--        <nav class="page-breadcrumb">--}}
-        {{--            <ol class="breadcrumb">--}}
-        {{--                <li class="breadcrumb-item"><a href="#">Tables</a></li>--}}
-        {{--                <li class="breadcrumb-item active" aria-current="page">Data Table</li>--}}
-        {{--            </ol>--}}
-        {{--        </nav>--}}
-
+    <div class="container-fluid">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div>
+                <h4 class="mb-3 mb-md-0">Pembayaran Sekali</h4>
+            </div>
+            <div class="d-flex">
+                <button type="button" class="btn ripple btn-primary btn-with-icon" data-toggle="modal" data-target="#exampleModal" style="margin-right: 5px">
+                    <i class="fe fe-credit-card"></i>
+                    Bayar Lansung
+                </button>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
 
-                        <button type="button" class="btn btn-primary btn-icon-text float-right" style="margin-top: 20px">
-                            <i class="btn-icon-prepend" data-feather="credit-card"></i>
-                            Bayar Lansung
-                        </button>
                         <h6 class="card-title" style="margin-bottom: 30px">Pembayaran Sekali Siswa</h6>
 
                         {{--                        <h4 class="card-title">Pilih Kelas</h4>--}}
