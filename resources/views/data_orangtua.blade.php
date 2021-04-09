@@ -145,7 +145,7 @@
 
 <br>
                         <div class="table-responsive">
-                            <table id="dataTableOrtu" class="table display nowrap" >
+                            <table id="dataTableJurusan" class="table display nowrap" >
                                 <thead class="thead-light">
                                 <tr>
                                     <th>No</th>

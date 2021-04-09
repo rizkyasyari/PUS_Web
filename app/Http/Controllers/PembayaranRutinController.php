@@ -69,6 +69,7 @@ class PembayaranRutinController extends Controller
             ->where('siswa.id_sekolah','=', $id)
             ->join('siswa','siswa.id_siswa','=','tagihan.id_siswa')
             ->join('jenis_pembayaran','jenis_pembayaran.id_jenis_pembayaran','=','tagihan.id_jenis_pembayaran')
+            ->where('jenis_pembayaran','=','Rutin')
             ->join('kelas','kelas.id_kelas','=','siswa.id_kelas')
             ->join('orang_tua','orang_tua.id_orangtua','=','siswa.id_orangtua')
             ->get();
@@ -140,4 +141,5 @@ class PembayaranRutinController extends Controller
         DB::table('tagihan')->where('id_tagihan',$id)->delete();
         return redirect('/tagihan_rutin');
     }
+
 }
