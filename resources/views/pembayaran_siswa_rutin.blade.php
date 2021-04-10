@@ -91,13 +91,16 @@
                                             <td>-</td>
                                         @endif
 
-                                        <td style="width: fit-content">
-                                            <button type="button" class="btn btn-success btn-icon-text"  data-toggle="modal" data-target="#exampleModal" style="margin-right: 5px" >
+
+                                        <td style="width: fit-content ">
+                                            @if($t->status_bayar!='Sukses')
+                                            <button type="button" value="{{$t->id_pembayaran}}" class="btn btn-success btn-icon-text bayar-tagihan"  data-toggle="modal" data-target="#exampleModal" style="margin-right: 5px" >
                                                 <i class="btn-icon-prepend" data-feather="credit-card"></i>
                                                 Bayar
                                             </button>
-                                        @if($t->status_bayar!='Belum')
-                                                <a href="{{url('/data_kelas/lihat/'. $t->id_pembayaran )}}"  class="btn ripple btn-primary btn-icon-prepend "><i class="fe fe-eye"></i> Lihat</a>
+                                        @else
+
+                                                <a href="{{url('/pembayaran_siswa_rutin/lihat/'. $t->id_pembayaran )}}"  class="btn ripple btn-primary btn-icon-prepend "><i class="fe fe-eye"></i> Lihat</a>
                                         @endif
 
                                         </td>
@@ -126,6 +129,7 @@
                     <form  method="POST" action="{{url('/pembayaran_siswa_rutin/tambah/')}}">
                         @csrf
                         <div class="form-group">
+                            <input type="hidden" id="id-pembayaran" name="id_pembayaran" required>
                             <label for="exampleModal">{{ __('Kode Pembayaran') }}</label>
                             <input id="kode" type="text" class="form-control @error('kode') is-invalid @enderror" name="kode" value="{{ old('kode') }}" required autocomplete="kode" autofocus>
 

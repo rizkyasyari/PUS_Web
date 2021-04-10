@@ -209,11 +209,11 @@
                     <a class="nav-link" href="{{url('laporan_rekap')}}"><i class="fe fe-folder"></i><span
                             class="sidemenu-label">Rekap Laporan</span></a>
                 </li>
-                    <li class="nav-label">Ekstra</li>
-                    <li class="nav-item show">
-                        <a class="nav-link" href="{{url('chat')}}"><i class="fe fe-message-circle"></i><span
-                                class="sidemenu-label">Chat</span></a>
-                    </li>
+{{--                    <li class="nav-label">Ekstra</li>--}}
+{{--                    <li class="nav-item show">--}}
+{{--                        <a class="nav-link" href="{{url('chat')}}"><i class="fe fe-message-circle"></i><span--}}
+{{--                                class="sidemenu-label">Chat</span></a>--}}
+{{--                    </li>--}}
                 @elseif(Auth::user()->status=='Administrator')
                     <li class="nav-label">Main</li>
                     <li class="nav-item show">
@@ -447,6 +447,13 @@
         })
 
     })
+
+    $('.bayar-tagihan').click(function () {
+        var id = $(this).val();
+        $('#id-pembayaran').val(id);
+
+    })
+
 </script>
 
 <script>
