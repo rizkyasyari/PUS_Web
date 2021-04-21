@@ -447,6 +447,18 @@
         })
 
     })
+
+    $('.bayar-tagihan').click(function () {
+        var id = $(this).val();
+        $('#id-pembayaran').val(id);
+
+    })
+    $('.tahun_ajaran').click(function () {
+        var id = $(this).val();
+        $('#id-tahun-ajar').val(id);
+
+    })
+
 </script>
 
 <script>

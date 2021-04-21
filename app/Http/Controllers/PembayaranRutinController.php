@@ -101,7 +101,7 @@ class PembayaranRutinController extends Controller
         DB::table('pembayaran')->where('id_pembayaran',$request->id)->update([
             'order_id' => $request->kode,
             'status_bayar' => 'Sukses',
-            'tanggal_bayar' => $timestamp,
+            'tanggal_pembayaran' =>  $timestamp,
             'tipe_pembayaran' => 'Manual',
             'keterangan' => $request->keterangan,
         ]);
@@ -124,7 +124,7 @@ class PembayaranRutinController extends Controller
         foreach ($siswa as $s){
             $simpan = DB::table('tagihan')->insertGetId([
                 'id_siswa' => $s->id_siswa,
-                'tanggal_tagihan' => $request->tanggal_tagihan,
+//                'tanggal_tagihan' => $request->tanggal_tagihan,
                 'tanggal_pembayaran' => $request->tanggal_pembayaran,
                 'batas_akhir_pembayaran' => $request->batas_pembayaran,
                 'id_jenis_pembayaran' => $request->pembayaran,

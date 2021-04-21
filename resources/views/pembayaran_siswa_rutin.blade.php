@@ -104,6 +104,7 @@
                     <form  method="POST" action="{{url('/pembayaran_siswa_rutin/tambah/')}}">
                         @csrf
                         <div class="form-group">
+                            <input type="hidden" id="id-pembayaran" name="id_pembayaran" required>
                             <label for="exampleModal">{{ __('Kode Pembayaran') }}</label>
                             <input id="kode" type="text" class="form-control @error('kode') is-invalid @enderror" name="kode" value="{{ old('kode') }}" required autocomplete="kode" autofocus>
 

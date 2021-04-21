@@ -56,19 +56,19 @@
 {{--                                                        @endforeach</select></p>--}}
 {{--                                            </div>--}}
 
-                                            <div class="form-group">
-                                                <label for="exampleModal">{{ __('Tanggal Tagihan') }}</label>
-                                                <input id="tanggal_tagihan" type="date" class="form-control @error('tanggal_tagihan') is-invalid @enderror" name="tanggal_tagihan" value="{{ old('tanggal_tagihan') }}" required autocomplete="tanggal_tagihan" autofocus>
+{{--                                            <div class="form-group">--}}
+{{--                                                <label for="exampleModal">{{ __('Tanggal Tagihan') }}</label>--}}
+{{--                                                <input id="tanggal_tagihan" type="date" class="form-control @error('tanggal_tagihan') is-invalid @enderror" name="tanggal_tagihan" value="{{ old('tanggal_tagihan') }}" required autocomplete="tanggal_tagihan" autofocus>--}}
 
-                                                @error('tanggal_tagihan')
-                                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                                @enderror
-                                            </div>
+{{--                                                @error('tanggal_tagihan')--}}
+{{--                                                <span class="invalid-feedback" role="alert">--}}
+{{--                                        <strong>{{ $message }}</strong>--}}
+{{--                                    </span>--}}
+{{--                                                @enderror--}}
+{{--                                            </div>--}}
 
                                             <div class="form-group">
-                                                <label for="exampleModal">{{ __('Tanggal Batas Pembayaran') }}</label>
+                                                <label for="exampleModal">{{ __('Waktu Pembayaran') }}</label>
                                                 <input id="tanggal_pembayaran" type="date" class="form-control @error('tanggal_pembayaran') is-invalid @enderror" name="tanggal_pembayaran" value="{{ old('tanggal_pembayaran') }}" required autocomplete="tanggal_pembayaran" autofocus>
 
                                                 @error('tanggal_pembayaran')
