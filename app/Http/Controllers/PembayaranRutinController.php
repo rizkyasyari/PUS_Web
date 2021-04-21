@@ -35,7 +35,7 @@ class PembayaranRutinController extends Controller
     }
     public function siswa_rutin()
     {
-//        $id = Auth::user()->id_akses;
+        $id = Auth::user()->id_akses;
 //        $data['tagihan'] = DB::table('tagihan')
 //            ->where('siswa.id_sekolah','=', $id)
 //            ->join('siswa','siswa.id_siswa','=','tagihan.id_siswa')
@@ -45,6 +45,7 @@ class PembayaranRutinController extends Controller
 //            ->get();
         $data['pembayaran'] = DB::table('pembayaran')
             ->join('tagihan','pembayaran.id_tagihan','=','tagihan.id_tagihan')
+            ->where('siswa.id_sekolah','=', $id)
             ->join('siswa','siswa.id_siswa','=','tagihan.id_siswa')
             ->join('jenis_pembayaran','jenis_pembayaran.id_jenis_pembayaran','=','tagihan.id_jenis_pembayaran')
 

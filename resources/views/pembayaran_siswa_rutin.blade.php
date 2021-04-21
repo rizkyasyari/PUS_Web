@@ -17,29 +17,7 @@
                         <h6 class="card-title" style="margin-bottom: 30px">Pembayaran Rutin Siswa</h6>
 
                         {{--                        <h4 class="card-title">Pilih Kelas</h4>--}}
-                        <div class="form-group">
-                            <label>Pilih Kelas</label>
-                            <select class="js-example-basic-single w-100">
-                                <option value="TX">7.3</option>
-                                <option value="NY">7.2</option>
-                                <option value="FL">7.1</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Jenis Pembayaran</label>
-                            <select class="js-example-basic-single w-100">
-                                <option value="TX">SPP</option>
-                                <option value="NY">Orang Tua Asuh</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Bulan</label>
-                            <select class="js-example-basic-single w-100">
-                                <option value="TX">Januari</option>
-                                <option value="NY">Februari</option>
-                                <option value="FL">Maret</option>
-                            </select>
-                        </div>
+
                         <div class="table-bordered" >
                             <table id="dataTableExample" class="table">
                                 <thead>
@@ -64,8 +42,8 @@
                                         <td><?= $no++ ?></td>
                                         <td>{{$t->nama_siswa}}</td>
                                         <td>{{$t->status_bayar}}</td>
-                                        @if($t->tanggal_bayar!=null)
-                                            <td>{{$t->tanggal_bayar}}</td>
+                                        @if($t->tanggal_pembayaran!=null)
+                                            <td>{{$t->tanggal_pembayaran}}</td>
                                         @else
                                             <td>-</td>
                                         @endif
