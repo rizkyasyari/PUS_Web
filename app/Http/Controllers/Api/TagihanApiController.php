@@ -33,7 +33,7 @@ class TagihanApiController extends Controller
                 ->update([
                     'status_bayar' => $request->input('status_bayar'),
                     'tipe_pembayaran' => 'By System',
-                    'tanggal_bayar' => $request->input('tanggal_bayar'),
+                    'tanggal_pembayaran' => $request->input('tanggal_bayar'),
                     'order_id' => $request->input('order_id')
                 ]);
             $response['code'] = 200;
@@ -41,6 +41,22 @@ class TagihanApiController extends Controller
         } else {
             $response['code'] = 400;
             $response['message'] = "Failed";
+        }
+        return json_encode($response);
+    }
+
+    public function riwayat(Request $request){
+        $tagihan = DB::table('tagihan')
+            ->join('pembayaran','pembayaran.id_tagihan','=','tagihan.id_tagihan')
+            ->join('jenis_pembayaran','jenis_pembayaran.id_jenis_pembayaran','=','tagihan.id_jenis_pembayaran')
+            ->join('siswa','siswa.id_siswa','=','tagihan.id_siswa')
+            ->where('id_orangtua','=',$request->input('id_orangtua'))
+            ->where('status_bayar','!=','Belum')
+            ->get();
+        if ($tagihan != null){
+            $response = $tagihan;
+        } else {
+            $response = "invalid";
         }
         return json_encode($response);
     }
