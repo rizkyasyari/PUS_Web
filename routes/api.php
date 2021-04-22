@@ -28,3 +28,6 @@ Route::get('users','ApiController@ambil_users');
 
 Route::post('login','Api\AuthApiController@login');
 Route::post('get-anak','Api\OrangtuaApiController@getAnak');
+Route::post('get-tagihan','Api\TagihanApiController@getTagihan');
+Route::post('update-tagihan','Api\TagihanApiController@updateTagihan');
+Route::post('riwayat-tagihan','Api\TagihanApiController@riwayat');

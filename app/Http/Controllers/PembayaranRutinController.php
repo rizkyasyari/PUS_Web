@@ -35,7 +35,7 @@ class PembayaranRutinController extends Controller
     }
     public function siswa_rutin()
     {
-//        $id = Auth::user()->id_akses;
+        $id = Auth::user()->id_akses;
 //        $data['tagihan'] = DB::table('tagihan')
 //            ->where('siswa.id_sekolah','=', $id)
 //            ->join('siswa','siswa.id_siswa','=','tagihan.id_siswa')
@@ -45,6 +45,7 @@ class PembayaranRutinController extends Controller
 //            ->get();
         $data['pembayaran'] = DB::table('pembayaran')
             ->join('tagihan','pembayaran.id_tagihan','=','tagihan.id_tagihan')
+            ->where('siswa.id_sekolah','=', $id)
             ->join('siswa','siswa.id_siswa','=','tagihan.id_siswa')
             ->join('jenis_pembayaran','jenis_pembayaran.id_jenis_pembayaran','=','tagihan.id_jenis_pembayaran')
             ->where('jenis_pembayaran','=','Rutin')
@@ -97,11 +98,12 @@ class PembayaranRutinController extends Controller
     {
 //        $id = Auth::user()->id_akses;
         // insert data ke table pegawai
+
         $timestamp = date("Y-m-d H:i:s");
         DB::table('pembayaran')->where('id_pembayaran',$request->id_pembayaran)->update([
             'order_id' => $request->kode,
             'status_bayar' => 'Sukses',
-            'tanggal_bayar' => $timestamp,
+            'tanggal_pembayaran' => $timestamp,
             'tipe_pembayaran' => 'Manual',
             'keterangan' => $request->keterangan,
         ]);
@@ -124,7 +126,7 @@ class PembayaranRutinController extends Controller
         foreach ($siswa as $s){
             $simpan = DB::table('tagihan')->insertGetId([
                 'id_siswa' => $s->id_siswa,
-                'tanggal_tagihan' => $request->tanggal_tagihan,
+//                'tanggal_tagihan' => $request->tanggal_tagihan,
                 'tanggal_pembayaran' => $request->tanggal_pembayaran,
                 'batas_akhir_pembayaran' => $request->batas_pembayaran,
                 'id_jenis_pembayaran' => $request->pembayaran,

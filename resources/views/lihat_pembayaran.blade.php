@@ -59,7 +59,11 @@
                                         {{$p->tanggal_tagihan}}
                                     @endforeach</h6>
                                 <h6 class="text-right font-weight-normal"><span class="text-muted">Tanggal Bayar :</span>  @foreach($pembayaran as $p)
-                                        {{$p->tanggal_bayar}}
+{{--<<<<<<< HEAD--}}
+{{--                                        {{$p->tanggal_pembayaran}}--}}
+{{--=======--}}
+                                        {{date('d-m-Y', strtotime($p->tanggal_pembayaran))}}
+{{-->>>>>>> jihad--}}
                                     @endforeach</h6>
                             </div>
                         </div>

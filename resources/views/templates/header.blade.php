@@ -453,6 +453,14 @@
         $('#id-pembayaran').val(id);
 
     })
+<<<<<<< HEAD
+=======
+    $('.tahun_ajaran').click(function () {
+        var id = $(this).val();
+        $('#id-tahun-ajar').val(id);
+
+    })
+>>>>>>> jihad
 
 </script>
 
