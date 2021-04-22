@@ -86,8 +86,8 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Jenis Pembayaran</th>
+                                    <th>Tahun Ajaran</th>
                                     <th>Nominal</th>
-                                    <th>Tanggal Pembayaran</th>
                                     <th>Aksi</th>
                                 </tr>
                                 </thead>
@@ -100,8 +100,8 @@
                                     <tr>
                                         <td><?= $no++ ?></td>
                                         <td><?= $p->nama_pembayaran ?></td>
+                                        <td><?= $p->tahun_ajaran ?></td>
                                         <td><?= $p->jumlah_bayar ?></td>
-                                        <td><?= $p->tanggal_bayar ?></td>
                                         <td style="width: fit-content">
 {{--                                            <a href="{{url('/data_kelas/edit/'. $k->id_kelas )}}"  class="btn ripple btn-success btn-with-icon btn-sm "><i class="fe fe-edit"></i> EDIT</a>--}}
 

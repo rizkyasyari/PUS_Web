@@ -18,9 +18,9 @@
 
                         {{--                        <h4 class="card-title">Pilih Kelas</h4>--}}
 
-                        <div class="table-bordered" >
-                            <table id="dataTableExample" class="table">
-                                <thead>
+                        <div class="table-responsive" >
+                            <table id="dataTableOrtu" class="table display nowrap" >
+                            <thead>
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
