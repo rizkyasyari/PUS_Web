@@ -16,6 +16,7 @@ class TagihanApiController extends Controller
             ->join('jenis_pembayaran','jenis_pembayaran.id_jenis_pembayaran','=','tagihan.id_jenis_pembayaran')
             ->where('id_siswa','=',$request->input('id_siswa'))
             ->where('status_bayar','=',$request->input('status_bayar'))
+            ->where('jenis_pembayaran','=',$request->input('jenis_pembayaran'))
             ->get();
         if ($tagihan != null){
             $response = $tagihan;
