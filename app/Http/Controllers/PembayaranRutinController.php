@@ -48,7 +48,7 @@ class PembayaranRutinController extends Controller
             ->where('siswa.id_sekolah','=', $id)
             ->join('siswa','siswa.id_siswa','=','tagihan.id_siswa')
             ->join('jenis_pembayaran','jenis_pembayaran.id_jenis_pembayaran','=','tagihan.id_jenis_pembayaran')
-
+            ->where('jenis_pembayaran','=','Rutin')
             ->get();
 //        $data['tagihan'] = DB::table('tagihan')
 //            ->join('pembayaran','tagihan.id_tagihan','=','pembayaran.id_pembayaran')
@@ -70,6 +70,7 @@ class PembayaranRutinController extends Controller
             ->where('siswa.id_sekolah','=', $id)
             ->join('siswa','siswa.id_siswa','=','tagihan.id_siswa')
             ->join('jenis_pembayaran','jenis_pembayaran.id_jenis_pembayaran','=','tagihan.id_jenis_pembayaran')
+            ->where('jenis_pembayaran','=','Rutin')
             ->join('kelas','kelas.id_kelas','=','siswa.id_kelas')
             ->join('orang_tua','orang_tua.id_orangtua','=','siswa.id_orangtua')
             ->get();
@@ -97,11 +98,12 @@ class PembayaranRutinController extends Controller
     {
 //        $id = Auth::user()->id_akses;
         // insert data ke table pegawai
+
         $timestamp = date("Y-m-d H:i:s");
-        DB::table('pembayaran')->where('id_pembayaran',$request->id)->update([
+        DB::table('pembayaran')->where('id_pembayaran',$request->id_pembayaran)->update([
             'order_id' => $request->kode,
             'status_bayar' => 'Sukses',
-            'tanggal_bayar' => $timestamp,
+            'tanggal_pembayaran' => $timestamp,
             'tipe_pembayaran' => 'Manual',
             'keterangan' => $request->keterangan,
         ]);
@@ -124,7 +126,7 @@ class PembayaranRutinController extends Controller
         foreach ($siswa as $s){
             $simpan = DB::table('tagihan')->insertGetId([
                 'id_siswa' => $s->id_siswa,
-                'tanggal_tagihan' => $request->tanggal_tagihan,
+//                'tanggal_tagihan' => $request->tanggal_tagihan,
                 'tanggal_pembayaran' => $request->tanggal_pembayaran,
                 'batas_akhir_pembayaran' => $request->batas_pembayaran,
                 'id_jenis_pembayaran' => $request->pembayaran,
@@ -141,4 +143,22 @@ class PembayaranRutinController extends Controller
         DB::table('tagihan')->where('id_tagihan',$id)->delete();
         return redirect('/tagihan_rutin');
     }
+
+
+    public function lihat($id)
+    {
+// mengambil data books berdasarkan id yang dipilih
+        $data['pembayaran'] = DB::table('pembayaran')
+            ->join('tagihan','pembayaran.id_tagihan','=','tagihan.id_tagihan')
+            ->join('siswa','siswa.id_siswa','=','tagihan.id_siswa')
+            ->join('orang_tua','orang_tua.id_orangtua','=','siswa.id_orangtua')
+            ->join('sekolah','sekolah.id_sekolah','=','siswa.id_sekolah')
+            ->join('jenis_pembayaran','jenis_pembayaran.id_jenis_pembayaran','=','tagihan.id_jenis_pembayaran')
+            ->where('jenis_pembayaran','=','Rutin')
+            ->where('id_pembayaran','=',$id)
+            ->get();
+// passing data books yang didapat ke view edit.blade.php
+        return view('/lihat_pembayaran', $data);
+    }
+
 }

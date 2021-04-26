@@ -86,7 +86,7 @@
                                     <td><?= $no++ ?></td>
                                     <td><?= $j->nama_jurusan?></td>
                                     <td class="d-flex justify-content-between">
-                                        <button value="{{ $j->id_jurusan }}" href="hapus_jurusan" type="button" class="btn ripple btn-success btn-with-icon btn-md" data-toggle="modal" data-target="#ModalJurusan">
+                                        <button value="{{ $j->id_jurusan }}" href="hapus_jurusan" type="button" class="btn ripple btn-success edit-jurusan btn-with-icon btn-md" data-toggle="modal" data-target="#ModalJurusan">
                                             <i class="fe fe-edit"></i>
                                             Edit
                                         </button>

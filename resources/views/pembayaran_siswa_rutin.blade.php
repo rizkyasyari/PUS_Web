@@ -18,9 +18,9 @@
 
                         {{--                        <h4 class="card-title">Pilih Kelas</h4>--}}
 
-                        <div class="table-bordered" >
-                            <table id="dataTableExample" class="table">
-                                <thead>
+                        <div class="table-responsive" >
+                            <table id="dataTableOrtu" class="table display nowrap" >
+                            <thead>
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
@@ -69,13 +69,16 @@
                                             <td>-</td>
                                         @endif
 
-                                        <td style="width: fit-content">
-                                            <button type="button" class="btn btn-success btn-icon-text"  data-toggle="modal" data-target="#exampleModal" style="margin-right: 5px" >
+
+                                        <td style="width: fit-content ">
+                                            @if($t->status_bayar!='Sukses')
+                                            <button type="button" value="{{$t->id_pembayaran}}" class="btn btn-success btn-icon-text bayar-tagihan"  data-toggle="modal" data-target="#exampleModal" style="margin-right: 5px" >
                                                 <i class="btn-icon-prepend" data-feather="credit-card"></i>
                                                 Bayar
                                             </button>
-                                        @if($t->status_bayar!='Belum')
-                                                <a href="{{url('/data_kelas/lihat/'. $t->id_pembayaran )}}"  class="btn ripple btn-primary btn-icon-prepend "><i class="fe fe-eye"></i> Lihat</a>
+                                        @else
+
+                                                <a href="{{url('/pembayaran_siswa_rutin/lihat/'. $t->id_pembayaran )}}"  class="btn ripple btn-primary btn-icon-prepend "><i class="fe fe-eye"></i> Lihat</a>
                                         @endif
 
                                         </td>
@@ -104,6 +107,7 @@
                     <form  method="POST" action="{{url('/pembayaran_siswa_rutin/tambah/')}}">
                         @csrf
                         <div class="form-group">
+                            <input type="hidden" id="id-pembayaran" name="id_pembayaran" required>
                             <label for="exampleModal">{{ __('Kode Pembayaran') }}</label>
                             <input id="kode" type="text" class="form-control @error('kode') is-invalid @enderror" name="kode" value="{{ old('kode') }}" required autocomplete="kode" autofocus>
 
@@ -123,29 +127,10 @@
                                     </span>
                             @enderror
                         </div>
-{{--                        --}}
-{{--                        <div class="form-group">--}}
-{{--                            <label>Tahun Ajaran</label>--}}
-{{--                            <p><select class="form-control select2" id="tahun_ajaran" name="tahun_ajaran" style="width: 100%">--}}
-{{--                                    @foreach($tahun_ajaran as $j)--}}
-{{--                                        <option value="{{$j->id_ta}}">{{$j->tahun_ajaran}}</option>--}}
-{{--                                    @endforeach</select></p>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="form-group">--}}
-{{--                            <label for="exampleModal">{{ __('Nominal') }}</label>--}}
-{{--                            <input id="nominal" type="number" min="1" class="form-control @error('nominal') is-invalid @enderror" name="nominal" value="{{ old('nominal') }}" required autocomplete="nominal" autofocus>--}}
-
-{{--                            @error('nominal')--}}
-{{--                            <span class="invalid-feedback" role="alert">--}}
-{{--                                        <strong>{{ $message }}</strong>--}}
-{{--                                    </span>--}}
-{{--                            @enderror--}}
-{{--                        </div>--}}
 
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">
                                 {{ __('Submit') }}
                             </button>

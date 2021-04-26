@@ -64,13 +64,18 @@ Route::get('/pembayaran_sekali/hapus/{id}', 'PembayaranSekaliController@hapus');
 
 Route::get('/pembayaran_siswa_rutin', 'PembayaranRutinController@siswa_rutin')->name('pembayaran_siswa_rutin');
 Route::post('/pembayaran_siswa_rutin/tambah', 'PembayaranRutinController@siswa_rutin_tambah');
+Route::get('/pembayaran_siswa_rutin/lihat/{id}', 'PembayaranRutinController@lihat');
+
 Route::get('/pembayaran_siswa_sekali', 'PembayaranSekaliController@siswa_sekali')->name('pembayaran_siswa_sekali');
+Route::post('/pembayaran_siswa_sekali/tambah', 'PembayaranSekaliController@siswa_sekali_tambah');
+Route::get('/pembayaran_siswa_sekali/lihat/{id}', 'PembayaranSekaliController@lihat');
 
 Route::get('/tagihan_rutin', 'PembayaranRutinController@tagihan_rutin')->name('tagihan_rutin');
 Route::post('/tagihan_rutin/tambah', 'PembayaranRutinController@tambah_tagihan');
 Route::get('/tagihan_rutin/hapus/{id}', 'PembayaranRutinController@hapus_tagihan');
-Route::get('/tagihan_sekali', 'PembayaranSekaliController@tagihan_sekali')->name('tagihan_sekali');
 
+Route::get('/tagihan_sekali', 'PembayaranSekaliController@tagihan_sekali')->name('tagihan_sekali');
+Route::post('/tagihan_sekali/tambah', 'PembayaranSekaliController@tambah_tagihan');
 
 Route::get('/pengguna', 'PenggunaController@index')->name('pengguna');
 Route::get('/pengguna/hapus/{id}', 'PenggunaController@hapus');
