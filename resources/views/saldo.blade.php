@@ -117,19 +117,19 @@
                             <div class="card-body">
                                 <div>
                                     <label class="tx-11 font-weight-bold mb-0 text-uppercase">Nama Rekening:</label>
-                                    <p class="text-muted">{{Auth::user()->nama_rekening}}</p>
+                                    <p class="text-muted">{{$rekening->nama_rekening}}</p>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div>
                                     <label class="tx-11 font-weight-bold mb-0 text-uppercase">Bank:</label>
-                                    <p class="text-muted">{{Auth::user()->bank_rekening}}</p>
+                                    <p class="text-muted">{{$rekening->bank_rekening}}</p>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div>
                                     <label class="tx-11 font-weight-bold mb-0 text-uppercase">Nomor Rekening:</label>
-                                    <p class="text-muted">{{Auth::user()->nomor_rekening}}</p>
+                                    <p class="text-muted">{{$rekening->nomor_rekening}}</p>
                                 </div>
                             </div>
 
@@ -154,7 +154,7 @@
                                             <div class="modal-body">
                                                 <form class="forms-sample">
                                                     <div class="form-group">
-                                                        <label for="exampleInputEmail1">Jumlah Penariakan</label>
+                                                        <label for="exampleInputEmail1">Jumlah Penarikan</label>
                                                         <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Jumlah Penarikan">
                                                     </div>
                                                 </form>
@@ -179,23 +179,20 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
+                                            <form action="{{route('edit_saldo',\Illuminate\Support\Facades\Auth::user()->id_akses)}}" method="post">
+                                                @csrf
                                             <div class="modal-body">
-                                                <form class="forms-sample">
                                                     <div class="form-group">
                                                         <label for="exampleInputEmail1">Nama Akun</label>
-                                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nama Akun">
+                                                        <input type="text" class="form-control" name="nama_akun" value="{{$rekening->nama_rekening}}" id="exampleInputEmail1" placeholder="Nama Akun">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="exampleInputUsername1">Nomor Rekening</label>
-                                                        <input type="number" class="form-control" id="exampleInputUsername1" autocomplete="off" placeholder="Nomor Rekening">
+                                                        <input type="number" class="form-control" id="exampleInputUsername1" value="{{$rekening->nomor_rekening}}" name="nomor_rekening" autocomplete="off" placeholder="Nomor Rekening">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="exampleInputUsername1">Nama Bank</label>
-                                                        <input type="text" class="form-control" id="exampleInputUsername1" autocomplete="off" placeholder="Nama Bank">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="exampleInputEmail1">Jumlah Nominal</label>
-                                                        <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Jumlah Nominal">
+                                                        <input type="text" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{$rekening->bank_rekening}}"  name="nama_bank" placeholder="Nama Bank">
                                                     </div>
 {{--                                                    <div class="form-group">--}}
 {{--                                                        <label for="exampleInputPassword1">{{ __('Password') }}</label>--}}
@@ -207,13 +204,13 @@
 {{--                                                        @enderror--}}
 
 {{--                                                    </div>--}}
-                                                </form>
                                             </div>
 
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Submit</button>
+                                                <button type="submit" class="btn btn-primary">Submit</button>
                                             </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -230,17 +227,18 @@
                         <div class="card rounded">
                             <div class="card-body">
                                 <h6 class="card-title">Riwayat Transaksi</h6>
+                                @foreach($riwayat as $value)
                                 <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
                                     <div class="d-flex align-items-center hover-pointer">
                                         <img class="img-xs rounded-circle" src="{{url('landingpages_assets/assets/img/atm-machine.png')}}" alt="">
                                         <div class="ml-2">
-                                            <p>Rp. 5.000.000</p>
-                                            <p class="tx-11 text-muted">01 Januari 2021</p>
+                                            <p>Rp. {{$value->jumlah_bayar}}</p>
+                                            <p class="tx-11 text-muted">{{$value->tanggal_pembayaran}}</p>
                                         </div>
                                     </div>
                                     <button class="btn btn-icon"><span class="badge badge-success">Success</span></button>
                                 </div>
-
+                                @endforeach
                             </div>
                         </div>
                     </div>

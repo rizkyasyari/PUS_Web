@@ -26,9 +26,32 @@ class SaldoController extends Controller
     public function index()
     {
         $id = Auth::user()->id_akses;
-        $users = DB::table('users') ->where('id_sekolah','=', $id)
+        $data['users'] = DB::table('users') ->where('id_sekolah','=', $id)
             ->join('sekolah','sekolah.id_sekolah','=','users.id_akses')
             ->get();
-        return view('saldo',['users'=>$users]);
+        $data['riwayat'] = DB::table('pembayaran')
+            ->join('tagihan','tagihan.id_tagihan','=','pembayaran.id_tagihan')
+            ->join('siswa','siswa.id_siswa','=','tagihan.id_siswa')
+            ->join('jenis_pembayaran','tagihan.id_jenis_pembayaran','=','jenis_pembayaran.id_jenis_pembayaran')
+            ->where('siswa.id_sekolah','=',$id)
+            ->where('status_bayar','=','Sukses')
+            ->whereNotNull('order_id')
+            ->get();
+        $data['rekening'] = DB::table('sekolah')
+            ->where('id_sekolah','=',$id)
+            ->first();
+        return view('saldo',$data);
+    }
+
+    public function editRekening(Request $request,$idSekolah){
+
+        DB::table('sekolah')
+            ->where('id_sekolah','=',$idSekolah)
+            ->update([
+                'nama_rekening' => $request->input('nama_akun'),
+                'bank_rekening' => $request->input('nama_bank'),
+                'nomor_rekening' => $request->input('nomor_rekening')
+            ]);
+        return redirect('saldo');
     }
 }
