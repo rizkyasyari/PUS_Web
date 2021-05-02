@@ -184,13 +184,14 @@
 
                                         <div class="form-group">
                                             <label for="exampleInputTipeSekolah">{{ __('Tipe Sekolah') }}</label>
-                                            <input id="tipe_sekolah" type="text" class="form-control @error('tipe_sekolah') is-invalid @enderror" name="tipe_sekolah" value="{{ old('tipe_sekolah') }}" required autocomplete="alamat">
-
-                                            @error('tipe_sekolah')
-                                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                            @enderror
+                                            <select class="form-control select2" id="tipe_sekolah" name="tipe_sekolah" style="width: 100%">
+                                                <option value="-">Pilih Tipe</option>
+                                                <option value="TK">TK</option>
+                                                <option value="SD/MI">SD/MI</option>
+                                                <option value="SMP/MTS">SMP/MTS</option>
+                                                <option value="SMA/MAN/SMK">SMA/MAN/SMK</option>
+                                                <option value="PERGURUAN_TINGGI">PERGURUAN_TINGGI</option>
+                                            </select>
                                         </div>
 
                                         <div class="form-group">

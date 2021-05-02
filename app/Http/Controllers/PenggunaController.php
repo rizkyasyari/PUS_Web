@@ -25,9 +25,9 @@ class PenggunaController extends Controller
      */
     public function index()
     {
-        //get table jurusan dari db
         $user =  DB::table('users')
             ->join('sekolah','sekolah.id_sekolah','=','users.id_akses')
+            ->where('status','=','Sekolah')
             ->get();
         return view('pengguna',['user'=>$user]);
     }
