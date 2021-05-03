@@ -85,7 +85,9 @@ class PembayaranSekaliController extends Controller
             ->join('kelas','kelas.id_kelas','=','siswa.id_kelas')
             ->join('orang_tua','orang_tua.id_orangtua','=','siswa.id_orangtua')
             ->get();
-         return view('tagihan_sekali', $data);
+        $data['tahun_ajaran'] =  DB::table('tahun_ajaran')->where('id_sekolah','=', $id)->get();
+
+        return view('tagihan_sekali', $data);
     }
     public function tambah(Request $request)
     {
@@ -94,8 +96,9 @@ class PembayaranSekaliController extends Controller
         DB::table('jenis_pembayaran')->insert([
             'jenis_pembayaran' => 'Sekali Bayar',
             'nama_pembayaran' => $request->jenis,
-            'tanggal_bayar' => $request->periode,
+//            'tanggal_pembayaran' => $request->tanggal_pembayaran,
             'jumlah_bayar' => $request->nominal,
+            'id_tahun_ajaran' => $request->tahun_ajaran,
             'id_sekolah' => $id
         ]);
         // alihkan halaman ke halaman pegawai

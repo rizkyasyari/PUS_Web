@@ -43,6 +43,13 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
+                                                <label>Tahun Ajaran</label>
+                                                <p><select class="form-control select2" id="tahun_ajaran" name="tahun_ajaran" style="width: 100%">
+                                                        @foreach($tahun_ajaran as $j)
+                                                            <option value="{{$j->id_ta}}">{{$j->tahun_ajaran}}</option>
+                                                        @endforeach</select></p>
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="exampleModal">{{ __('Nominal') }}</label>
                                                 <input id="nominal" type="number"  min="1" class="form-control @error('nominal') is-invalid @enderror" name="nominal" value="{{ old('nominal') }}" required autocomplete="nominal" autofocus>
 
@@ -52,16 +59,16 @@
                                     </span>
                                                 @enderror
                                             </div>
-                                            <div class="form-group">
-                                                <label for="exampleModal">{{ __('Tanggal Pembayaran') }}</label>
-                                                <input id="periode" type="date" class="form-control @error('periode') is-invalid @enderror" name="periode" value="{{ old('periode') }}" required autocomplete="periode" autofocus>
+{{--                                            <div class="form-group">--}}
+{{--                                                <label for="exampleModal">{{ __('Tanggal Pembayaran') }}</label>--}}
+{{--                                                <input id="tanggal_pembayaran" type="date" class="form-control @error('tanggal_pembayaran') is-invalid @enderror" name="tanggal_pembayaran" value="{{ old('tanggal_pembayaran') }}" required autocomplete="tanggal_pembayaran" autofocus>--}}
 
-                                                @error('periode')
-                                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                                @enderror
-                                            </div>
+{{--                                                @error('tanggal_pembayaran')--}}
+{{--                                                <span class="invalid-feedback" role="alert">--}}
+{{--                                        <strong>{{ $message }}</strong>--}}
+{{--                                    </span>--}}
+{{--                                                @enderror--}}
+{{--                                            </div>--}}
 
 
                                             <div class="modal-footer">

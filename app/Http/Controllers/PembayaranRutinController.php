@@ -86,7 +86,7 @@ class PembayaranRutinController extends Controller
             'nama_pembayaran' => $request->jenis,
 //            'bulan' => $request->bulan,
             'jumlah_bayar' => $request->nominal,
-            'tahun_ajaran' => $request->tahun_ajaran,
+            'id_tahun_ajaran' => $request->tahun_ajaran,
             'id_sekolah' => $id
         ]);
         // alihkan halaman ke halaman pegawai
