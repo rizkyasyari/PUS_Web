@@ -225,6 +225,10 @@
                                 class="sidemenu-label">Kelola Pengguna</span></a>
                     </li>
                     <li class="nav-item show">
+                        <a class="nav-link" href="{{url('penarikan')}}"><i class="fe fe-users"></i><span
+                                class="sidemenu-label">Kelola Penarikan</span></a>
+                    </li>
+                    <li class="nav-item show">
                         <a class="nav-link" href="{{url('')}}"><i class="fe fe-dollar-sign"></i><span
                                 class="sidemenu-label">Cashout</span></a>
                     </li>

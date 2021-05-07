@@ -86,3 +86,7 @@ Route::get('/tahun_ajaran', 'TahunAjaranController@index')->name('tahun_ajaran')
 Route::post('/tahun_ajaran/tambah', 'TahunAjaranController@tambah');
 Route::get('/tahun_ajaran/hapus/{id}', 'TahunAjaranController@hapus');
 
+Route::post('/saldo/edit/{id}', 'SaldoController@editRekening')->name('edit_saldo');
+Route::post('/tarik', 'SaldoController@tarik')->name('tarik');
+Route::get('/penarikan', 'SaldoController@semuaPenarikan')->name('penarikan');
+Route::get('/ganti-status/{id}/{status}', 'SaldoController@gantiStatus');

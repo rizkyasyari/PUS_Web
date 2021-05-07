@@ -31,3 +31,4 @@ Route::post('get-anak','Api\OrangtuaApiController@getAnak');
 Route::post('get-tagihan','Api\TagihanApiController@getTagihan');
 Route::post('update-tagihan','Api\TagihanApiController@updateTagihan');
 Route::post('riwayat-tagihan','Api\TagihanApiController@riwayat');
+Route::post('total-tagihan','Api\TagihanApiController@total');
