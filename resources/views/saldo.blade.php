@@ -135,7 +135,7 @@
 
                             <div class="card-body">
                                 <h4 class="mb-3 mb-md-0">Saldo Anda</h4>
-                                <h4><span class="badge badge-success" style="margin-top: 20px">Rp.100.000.000</span></h4>
+                                <h4><span class="badge badge-success" style="margin-top: 20px">Rp. {{$rekening->saldo_sekolah}}</span></h4>
                                 <button type="button" class="btn btn-primary btn-icon-text float-right" style="margin-top: 20px" data-toggle="modal" data-target="#tarikModal">
                                     <i class="btn-icon-prepend" data-feather="credit-card"></i>
                                     Tarik
@@ -151,20 +151,21 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <div class="modal-body">
-                                                <form class="forms-sample">
-                                                    <div class="form-group">
-                                                        <label for="exampleInputEmail1">Jumlah Penarikan</label>
-                                                        <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Jumlah Penarikan">
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <p class="mb-3"h><code>*Proses penarikan akan membutuhkan tiga sampai tujuh hari kerja</code></p>
+                                            <form class="forms-sample" action="{{route('tarik')}}" method="post">
+                                                @csrf
+                                                <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Jumlah Penarikan</label>
+                                                            <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Jumlah Penarikan" name="jumlah" required>
+                                                        </div>
+                                                </div>
+                                                <p class="mb-3"><code>*Proses penarikan akan membutuhkan tiga sampai tujuh hari kerja</code></p>
 
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Submit</button>
-                                            </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -238,6 +239,39 @@
                                     </div>
                                     <button class="btn btn-icon"><span class="badge badge-success">Success</span></button>
                                 </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="d-none d-xl-block col-xl-3 right-wrapper">
+                <div class="row">
+                    <div class="col-md-12 grid-margin">
+                        <div class="card rounded">
+                            <div class="card-body">
+                                <h6 class="card-title">Riwayat Penarikan</h6>
+                                @foreach($penarikan as $value)
+                                    <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                                        <div class="d-flex align-items-center hover-pointer">
+                                            <img class="img-xs rounded-circle" src="{{url('landingpages_assets/assets/img/atm-machine.png')}}" alt="">
+                                            <div class="ml-2">
+                                                <p>Rp. {{$value->penarikan_jumlah}}</p>
+                                                <p class="tx-11 text-muted">{{$value->penarikan_date_created}}</p>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-icon">
+                                            @if($value->penarikan_status == 'Tunggu')
+                                                <span class="badge badge-warning">Tunggu</span>
+                                            @elseif($value->penarikan_status == 'Setuju')
+                                                <span class="badge badge-success">Setuju</span>
+                                            @elseif($value->penarikan_status == 'Tolak')
+                                                <span class="badge badge-danger">Ditolak</span>
+                                            @endif
+                                        </button>
+                                    </div>
                                 @endforeach
                             </div>
                         </div>
