@@ -25,7 +25,7 @@
     <link href="{{url('assets/plugins/typicons.font/typicons.css')}}" rel="stylesheet">
 
     <!---Feather css-->
-    <link href="{{url('assets/plugins/feather/feather.css')}}" rel="stylesheet">
+{{--    <link href="{{url('assets/plugins/feather/feather.css')}}" rel="stylesheet">--}}
 
     <!---Falg-icons css-->
     <link href="{{url('assets/plugins/flag-icon-css/css/flag-icon.min.css')}}" rel="stylesheet">
@@ -82,8 +82,8 @@
     <link media="all" type="text/css" rel="stylesheet"
           href="{{url('plugins/datatables-net-bs4/select.dataTables.min.css')}}">
 
-    <link media="all" type="text/css" rel="stylesheet" href="{{url('assets/fonts/feather-font/css/iconfont.css')}}">
-    <link media="all" type="text/css" rel="stylesheet" href="{{url('assets/plugins/perfect-scrollbar/perfect-scrollbar.css')}}">
+{{--    <link media="all" type="text/css" rel="stylesheet" href="{{url('assets/fonts/feather-font/css/iconfont.css')}}">--}}
+{{--    <link media="all" type="text/css" rel="stylesheet" href="{{url('assets/plugins/perfect-scrollbar/perfect-scrollbar.css')}}">--}}
     <!-- end plugin css -->
 
 
@@ -385,9 +385,9 @@
 <!-- common js -->
 <script src="{{url('js/template.js')}}"></script>
 <!-- end common js -->
-<script src="{{url('assets/plugins/datatables-net-bs4/dataTables.buttons.min.js')}}"></script>
-<script src="{{url('assets/plugins/datatables-net-bs4/dataTables.searchPanes.min.js')}}"></script>
-<script src="{{url('assets/plugins/datatables-net-bs4/dataTables.select.min.js')}}"></script>
+{{--<script src="{{url('assets/plugins/datatables-net-bs4/dataTables.buttons.min.js')}}"></script>--}}
+{{--<script src="{{url('assets/plugins/datatables-net-bs4/dataTables.searchPanes.min.js')}}"></script>--}}
+{{--<script src="{{url('assets/plugins/datatables-net-bs4/dataTables.select.min.js')}}"></script>--}}
 
 <!-- end plugin js -->
 <script src="{{url('js/dashboard.js')}}"></script>
