@@ -101,7 +101,7 @@
 
                                     <td style="width: fit-content ">
                                         @if($t->status_bayar!='Sukses')
-                                            <button type="button" value="{{$t->id_pembayaran}}" class="btn btn-success btn-icon-text bayar-tagihan"  data-toggle="modal" data-target="#exampleModal" style="margin-right: 5px" >
+                                            <button type="button" value="{{$t->id_pembayaran}}" class="btn btn-success btn-icon-text pembayaran"  data-toggle="modal" data-target="#exampleModal" style="margin-right: 5px" >
                                                 <i class="btn-icon-prepend" data-feather="credit-card"></i>
                                                 Bayar
                                             </button>

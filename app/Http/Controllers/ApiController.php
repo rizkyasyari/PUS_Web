@@ -39,11 +39,11 @@ public function ambil_users(){
         echo json_encode(array('hasil'=>$data));
     }
 
-//    public function ambil_pembayaran($id){
-//        $data = DB::table('jenis_pembayaran')
-//            ->where('id_jenis_pembayaran',$id)
-//            ->first();
-//        echo json_encode(array('hasil'=>$data));
-//    }
+    public function ambil_pembayaran($id){
+        $data = DB::table('pembayaran')
+            ->where('id_pembayaran',$id)
+            ->first();
+        echo json_encode(array('hasil'=>$data));
+    }
 
 }

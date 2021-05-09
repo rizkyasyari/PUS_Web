@@ -192,23 +192,23 @@
                     </ul>
                 </li>
 
-                <li class="nav-label">Laporan</li>
-                <li class="nav-item">
-                    <a class="nav-link with-sub" href="#"><i class="fa fa-file"></i><span
-                            class="sidemenu-label">Laporan Bulanan</span></a>
-                    <ul class="nav-sub">
-                        <li class="nav-sub-item">
-                            <a class="nav-sub-link" href="{{url('laporan')}}">Laporan Tagihan</a>
-                        </li>
-                        <li class="nav-sub-item">
-                            <a class="nav-sub-link" href="{{url(('laporan_pemasukan') )}}">Laporan Pemasukan</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item show">
-                    <a class="nav-link" href="{{url('laporan_rekap')}}"><i class="fe fe-folder"></i><span
-                            class="sidemenu-label">Rekap Laporan</span></a>
-                </li>
+{{--                <li class="nav-label">Laporan</li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link with-sub" href="#"><i class="fa fa-file"></i><span--}}
+{{--                            class="sidemenu-label">Laporan Bulanan</span></a>--}}
+{{--                    <ul class="nav-sub">--}}
+{{--                        <li class="nav-sub-item">--}}
+{{--                            <a class="nav-sub-link" href="{{url('laporan')}}">Laporan Tagihan</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-sub-item">--}}
+{{--                            <a class="nav-sub-link" href="{{url(('laporan_pemasukan') )}}">Laporan Pemasukan</a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item show">--}}
+{{--                    <a class="nav-link" href="{{url('laporan_rekap')}}"><i class="fe fe-folder"></i><span--}}
+{{--                            class="sidemenu-label">Rekap Laporan</span></a>--}}
+{{--                </li>--}}
 {{--                    <li class="nav-label">Ekstra</li>--}}
 {{--                    <li class="nav-item show">--}}
 {{--                        <a class="nav-link" href="{{url('chat')}}"><i class="fe fe-message-circle"></i><span--}}
@@ -274,12 +274,12 @@
                                     <p class="email text-muted mb-3">{{Auth::user()->email}}</p>
                                 </div>
                             </div>
-                            <li class="nav-item">
-                                <a href="{{ url('saldo')}}" class="nav-link">
-                                    <i class="fe fe-user"></i>
-                                    <span style="margin-left: 10px">Profile</span>
-                                </a>
-                            </li>
+{{--                            <li class="nav-item">--}}
+{{--                                <a href="{{ url('saldo')}}" class="nav-link">--}}
+{{--                                    <i class="fe fe-user"></i>--}}
+{{--                                    <span style="margin-left: 10px">Profile</span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
                             <a href="{{ route('logout') }}" class="nav-link dropdown-item"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -457,14 +457,14 @@
         $('#id-pembayaran').val(id);
 
     })
-<<<<<<< HEAD
-=======
-    $('.tahun_ajaran').click(function () {
-        var id = $(this).val();
-        $('#id-tahun-ajar').val(id);
-
-    })
->>>>>>> jihad
+// <<<<<<< HEAD
+// =======
+//     $('.tahun_ajaran').click(function () {
+//         var id = $(this).val();
+//         $('#id-tahun-ajar').val(id);
+//
+//     })
+// >>>>>>> jihad
 
 </script>
 
